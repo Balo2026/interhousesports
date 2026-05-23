@@ -3,91 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interhouse Sports 2025</title>
+<title>Interhouse Sports 26'</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Paris2024';src:url('Paris2024.ttf') format('truetype');font-weight:normal;font-style:normal;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:#080808;font-family:'Courier New',monospace;overflow-x:hidden;}
-.scan{position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.06) 3px,rgba(0,0,0,0.06) 4px);pointer-events:none;z-index:998;}
-.ticker-wrap{background:#0d0d0d;border-bottom:1px solid #1a1a1a;padding:5px 0;overflow:hidden;white-space:nowrap;}
-.ticker-inner{display:inline-flex;gap:28px;animation:tick 24s linear infinite;}
-.ticker-inner span{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:#555;}
-.ticker-inner b{color:#e8c84a;}
-@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.hero{padding:36px 28px 0;display:flex;flex-direction:column;align-items:center;text-align:center;}
-.logo-wrap img{width:80px;height:80px;object-fit:contain;margin-bottom:16px;}
-.hero-eyebrow{font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#555;margin-bottom:10px;}
-.hero-title{font-size:42px;font-weight:700;color:#fff;letter-spacing:-0.02em;line-height:1;margin-bottom:6px;font-family:Georgia,serif;}
-.hero-title span{color:#e8c84a;}
-.hero-sub{font-size:11px;color:#555;letter-spacing:0.06em;line-height:1.7;max-width:340px;margin-bottom:28px;}
-.countdown{display:flex;gap:3px;margin-bottom:32px;}
-.cd-block{background:#0d0d0d;border:1px solid #1a1a1a;padding:12px 14px;min-width:68px;text-align:center;}
-.cd-num{font-size:28px;font-weight:700;color:#e8c84a;line-height:1;font-variant-numeric:tabular-nums;}
-.cd-lbl{font-size:8px;color:#444;letter-spacing:0.18em;text-transform:uppercase;margin-top:4px;}
-.cd-sep{font-size:24px;color:#222;display:flex;align-items:center;padding-bottom:12px;}
-.type-selector{display:flex;gap:2px;margin-bottom:24px;width:100%;max-width:480px;}
-.type-btn{flex:1;padding:10px 6px;border:1px solid #1e1e1e;background:transparent;color:#555;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;font-family:'Courier New',monospace;transition:all 0.15s;position:relative;}
-.type-btn.active{border-color:#e8c84a;color:#e8c84a;background:rgba(232,200,74,0.05);}
-.type-btn .tb-icon{font-size:16px;display:block;margin-bottom:4px;}
-.type-tag{position:absolute;top:-1px;right:-1px;font-size:7px;background:#e8c84a;color:#080808;padding:1px 4px;}
-.form-wrap{width:100%;max-width:480px;margin-bottom:32px;}
-.form-panel{display:none;border:1px solid #1a1a1a;padding:20px;}
-.form-panel.active{display:block;}
-.fp-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #111;}
-.fp-icon{font-size:22px;} .fp-title{font-size:13px;color:#fff;} .fp-sub{font-size:10px;color:#555;margin-top:2px;}
-.f-row{margin-bottom:10px;} .f-row-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
-.f-label{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:#444;margin-bottom:4px;}
-.f-input{background:#0d0d0d;border:1px solid #1a1a1a;color:#fff;padding:9px 11px;font-size:11px;font-family:'Courier New',monospace;width:100%;transition:border-color 0.15s;}
-.f-input:focus{outline:none;border-color:#e8c84a;} .f-input::placeholder{color:#2a2a2a;}
-.f-select{background:#0d0d0d;border:1px solid #1a1a1a;color:#fff;padding:9px 11px;font-size:11px;font-family:'Courier New',monospace;width:100%;cursor:pointer;}
-.f-select option{background:#111;}
-.pill-group{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
-.pill{border:1px solid #1e1e1e;padding:5px 10px;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:#444;cursor:pointer;transition:all 0.15s;}
-.pill.on{border-color:#e8c84a;color:#080808;background:#e8c84a;}
-.f-check-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;}
-.f-check-row input{accent-color:#e8c84a;margin-top:2px;}
-.f-check-label{font-size:10px;color:#444;line-height:1.5;}
-.submit-btn{width:100%;background:#e8c84a;color:#080808;border:none;padding:12px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:'Courier New',monospace;font-weight:700;margin-top:14px;}
-.ticket-preview{display:none;background:#f5f0e8;border-radius:3px;padding:16px 18px;margin-top:14px;position:relative;}
-.tp-hole-l,.tp-hole-r{position:absolute;top:50%;transform:translateY(-50%);width:16px;height:16px;border-radius:50%;background:#080808;}
-.tp-hole-l{left:-8px;} .tp-hole-r{right:-8px;}
-.tp-eyebrow{font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:#999;margin-bottom:4px;}
-.tp-name{font-size:16px;font-weight:700;color:#111;margin-bottom:6px;}
-.tp-row{display:flex;gap:16px;margin-bottom:8px;} .tp-detail{display:flex;flex-direction:column;gap:1px;}
-.tp-detail-lbl{font-size:7px;color:#aaa;letter-spacing:0.12em;text-transform:uppercase;} .tp-detail-val{font-size:10px;color:#111;font-weight:700;}
-.tp-barcode{display:flex;gap:1px;align-items:flex-end;height:22px;margin-top:6px;} .tp-bar{background:#333;}
-.tp-serial{font-size:8px;color:#aaa;margin-top:3px;letter-spacing:0.1em;}
-.tp-badge{display:inline-block;padding:3px 8px;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;font-family:'Courier New',monospace;}
-.stats-strip{display:flex;border-top:1px solid #111;border-bottom:1px solid #111;}
-.stat-item{flex:1;padding:14px;text-align:center;border-right:1px solid #111;} .stat-item:last-child{border-right:none;}
-.stat-num{font-size:20px;font-weight:700;color:#e8c84a;} .stat-lbl{font-size:8px;color:#444;letter-spacing:0.14em;text-transform:uppercase;margin-top:3px;}
-.bottom-ticker{background:#e8c84a;padding:5px 0;overflow:hidden;white-space:nowrap;}
-.bt-inner{display:inline-flex;gap:20px;animation:tick2 16s linear infinite;}
-.bt-inner span{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#080808;font-weight:700;}
-@keyframes tick2{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-</style></head><body>
-<div class="scan"></div>
-<div class="ticker-wrap"><div class="ticker-inner"><span>Interhouse Sports 2025</span><b> /// </b><span>Sep 12 - Main Oval</span><b> /// </b><span>8 Events 4 Houses 1 Champion</span><b> /// </b><span>Registration closes Sep 1</span><b> /// </b><span>Vendors: limited spots remain</span><b> /// </b><span>Interhouse Sports 2025</span><b> /// </b><span>Sep 12 - Main Oval</span><b> /// </b><span>8 Events 4 Houses 1 Champion</span><b> /// </b><span>Registration closes Sep 1</span><b> /// </b><span>Vendors: limited spots remain</span><b> /// </b></div></div>
-<div class="hero">
-<div class="logo-wrap"><img src="logo.png" alt="Interhouse Sports"></div>
-<div class="hero-eyebrow">Annual Games - Season 2025</div>
-<div class="hero-title">Inter<span>house</span><br>Sports</div>
-<div class="hero-sub">Eight events. Four houses. One day. Register below as an athlete, attendee, or vendor.</div>
-<div class="countdown"><div class="cd-block"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">Days</div></div><div class="cd-sep">:</div><div class="cd-block"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Hrs</div></div><div class="cd-sep">:</div><div class="cd-block"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Min</div></div><div class="cd-sep">:</div><div class="cd-block"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Sec</div></div></div>
-<div class="type-selector"><button class="type-btn active" onclick="switchType('athlete',this)"><span class="tb-icon">&#127939;</span>Athlete</button><button class="type-btn" onclick="switchType('attendee',this)"><span class="tb-icon">&#127903;</span>Attendee</button><button class="type-btn" onclick="switchType('vendor',this)"><span class="tb-icon">&#127978;</span>Vendor<span class="type-tag">Limited</span></button></div>
-<div class="form-wrap">
-<div class="form-panel active" id="panel-athlete"><div class="fp-header"><div class="fp-icon">&#127939;</div><div><div class="fp-title">Athlete registration</div><div class="fp-sub">Compete for your house across 8 events</div></div></div><div class="f-row-2"><div><div class="f-label">First name</div><input class="f-input" id="a-first" type="text" placeholder="First"></div><div><div class="f-label">Last name</div><input class="f-input" id="a-last" type="text" placeholder="Last"></div></div><div class="f-row"><div class="f-label">Email</div><input class="f-input" id="a-email" type="email" placeholder="you@school.com"></div><div class="f-row-2"><div><div class="f-label">House</div><select class="f-select" id="a-house"><option value="">Select</option><option>Phoenix</option><option>Titan</option><option>Viper</option><option>Storm</option></select></div><div><div class="f-label">Year</div><input class="f-input" id="a-grade" type="text" placeholder="Grade 11"></div></div><div class="f-label" style="margin-bottom:6px;">Events entering</div><div class="pill-group"><div class="pill" onclick="this.classList.toggle('on')">100m Sprint</div><div class="pill" onclick="this.classList.toggle('on')">Long Jump</div><div class="pill" onclick="this.classList.toggle('on')">Shot Put</div><div class="pill" onclick="this.classList.toggle('on')">High Jump</div><div class="pill" onclick="this.classList.toggle('on')">Tug of War</div><div class="pill" onclick="this.classList.toggle('on')">4x100 Relay</div><div class="pill" onclick="this.classList.toggle('on')">Javelin</div></div><div class="f-check-row"><input type="checkbox" id="a-waiver"><label class="f-check-label" for="a-waiver">I agree to the participation waiver and confirm I am medically fit to compete</label></div><button class="submit-btn" onclick="submitForm('athlete')">Generate athlete ticket</button><div class="ticket-preview" id="tp-athlete"><div class="tp-hole-l"></div><div class="tp-hole-r"></div><div class="tp-eyebrow">Athlete pass - Interhouse Sports 2025</div><div class="tp-badge" id="tp-a-badge" style="background:#D85A30;color:#fff;">Phoenix</div><div class="tp-name" id="tp-a-name">-</div><div class="tp-row"><div class="tp-detail"><div class="tp-detail-lbl">Date</div><div class="tp-detail-val">Sep 12 2025</div></div><div class="tp-detail"><div class="tp-detail-lbl">Venue</div><div class="tp-detail-val">Main Oval</div></div><div class="tp-detail"><div class="tp-detail-lbl">Type</div><div class="tp-detail-val">Competitor</div></div></div><div class="tp-barcode" id="tp-a-bc"></div><div class="tp-serial" id="tp-a-serial"></div></div></div>
-<div class="form-panel" id="panel-attendee"><div class="fp-header"><div class="fp-icon">&#127903;</div><div><div class="fp-title">Attendee registration</div><div class="fp-sub">Come watch cheer and be part of the day</div></div></div><div class="f-row-2"><div><div class="f-label">First name</div><input class="f-input" id="at-first" type="text" placeholder="First"></div><div><div class="f-label">Last name</div><input class="f-input" id="at-last" type="text" placeholder="Last"></div></div><div class="f-row"><div class="f-label">Email</div><input class="f-input" id="at-email" type="email" placeholder="you@email.com"></div><div class="f-row-2"><div><div class="f-label">House supporting</div><select class="f-select" id="at-house"><option value="">Neutral</option><option>Phoenix</option><option>Titan</option><option>Viper</option><option>Storm</option></select></div><div><div class="f-label">Tickets</div><select class="f-select" id="at-qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div></div><div class="f-row"><div class="f-label">Dietary or accessibility needs</div><input class="f-input" id="at-notes" type="text" placeholder="e.g. wheelchair access vegetarian"></div><button class="submit-btn" onclick="submitForm('attendee')">Get my ticket</button><div class="ticket-preview" id="tp-attendee"><div class="tp-hole-l"></div><div class="tp-hole-r"></div><div class="tp-eyebrow">Spectator pass - Interhouse Sports 2025</div><div class="tp-badge" id="tp-at-badge" style="background:#888;color:#fff;">General</div><div class="tp-name" id="tp-at-name">-</div><div class="tp-row"><div class="tp-detail"><div class="tp-detail-lbl">Date</div><div class="tp-detail-val">Sep 12 2025</div></div><div class="tp-detail"><div class="tp-detail-lbl">Gates open</div><div class="tp-detail-val">08:00</div></div><div class="tp-detail"><div class="tp-detail-lbl">Type</div><div class="tp-detail-val">Spectator</div></div></div><div class="tp-barcode" id="tp-at-bc"></div><div class="tp-serial" id="tp-at-serial"></div></div></div>
-<div class="form-panel" id="panel-vendor"><div class="fp-header"><div class="fp-icon">&#127978;</div><div><div class="fp-title">Vendor application</div><div class="fp-sub">Limited stalls available apply early</div></div></div><div class="f-row"><div class="f-label">Business name</div><input class="f-input" id="v-biz" type="text" placeholder="Your business name"></div><div class="f-row-2"><div><div class="f-label">Contact name</div><input class="f-input" id="v-name" type="text" placeholder="Your name"></div><div><div class="f-label">Phone</div><input class="f-input" id="v-phone" type="tel" placeholder="604-xxx-xxxx"></div></div><div class="f-row"><div class="f-label">Email</div><input class="f-input" id="v-email" type="email" placeholder="you@business.com"></div><div class="f-row"><div class="f-label">Type of stall</div><select class="f-select" id="v-type"><option value="">Select type</option><option>Food and Beverage</option><option>Merchandise</option><option>Health and Wellness</option><option>Sports Equipment</option><option>Community or Charity</option><option>Other</option></select></div><div class="f-row"><div class="f-label">Description</div><input class="f-input" id="v-desc" type="text" placeholder="e.g. Grilled food smoothies spirit wear"></div><div class="f-check-row"><input type="checkbox" id="v-power"><label class="f-check-label" for="v-power">I require a power outlet at my stall</label></div><div class="f-check-row"><input type="checkbox" id="v-terms"><label class="f-check-label" for="v-terms">I agree to the vendor terms including setup times conduct standards and stall fees</label></div><button class="submit-btn" onclick="submitForm('vendor')">Submit application</button><div class="ticket-preview" id="tp-vendor"><div class="tp-hole-l"></div><div class="tp-hole-r"></div><div class="tp-eyebrow">Vendor pass - Interhouse Sports 2025</div><div class="tp-badge" id="tp-v-badge" style="background:#1D9E75;color:#fff;">Vendor</div><div class="tp-name" id="tp-v-name">-</div><div class="tp-row"><div class="tp-detail"><div class="tp-detail-lbl">Date</div><div class="tp-detail-val">Sep 12 2025</div></div><div class="tp-detail"><div class="tp-detail-lbl">Setup from</div><div class="tp-detail-val">06:30</div></div><div class="tp-detail"><div class="tp-detail-lbl">Type</div><div class="tp-detail-val" id="tp-v-type">-</div></div></div><div class="tp-barcode" id="tp-v-bc"></div><div class="tp-serial" id="tp-v-serial"></div></div></div>
-</div></div>
-<div class="stats-strip"><div class="stat-item"><div class="stat-num" id="st-athletes">247</div><div class="stat-lbl">Athletes</div></div><div class="stat-item"><div class="stat-num" id="st-attendees">412</div><div class="stat-lbl">Attendees</div></div><div class="stat-item"><div class="stat-num">14</div><div class="stat-lbl">Vendors</div></div><div class="stat-item"><div class="stat-num">8</div><div class="stat-lbl">Events</div></div></div>
-<div class="bottom-ticker"><div class="bt-inner"><span>Phoenix</span><span>.</span><span>Titan</span><span>.</span><span>Viper</span><span>.</span><span>Storm</span><span>.</span><span>Compete</span><span>.</span><span>Cheer</span><span>.</span><span>Celebrate</span><span>.</span><span>Sep 12 2025</span><span>.</span><span>Main Oval</span><span>.</span><span>Phoenix</span><span>.</span><span>Titan</span><span>.</span><span>Viper</span><span>.</span><span>Storm</span><span>.</span><span>Compete</span><span>.</span><span>Cheer</span><span>.</span><span>Celebrate</span><span>.</span><span>Sep 12 2025</span><span>.</span><span>Main Oval</span><span>.</span></div></div>
+.nes{background:#000080;font-family:'Press Start 2P',monospace;color:#fff;min-height:100vh;position:relative;overflow:hidden;}
+.scanlines{position:fixed;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.18) 0px,rgba(0,0,0,0.18) 1px,transparent 1px,transparent 3px);pointer-events:none;z-index:99;}
+.page{display:none;position:relative;z-index:1;}
+.page.on{display:block;}
+.blink{animation:bl 1s step-end infinite;}
+@keyframes bl{0%,100%{opacity:1;}50%{opacity:0;}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.fade-in{animation:fadeIn 0.3s ease forwards;}
+.color-bar{height:4px;display:flex;}
+.cb1{flex:1;background:#fc0;}.cb2{flex:1;background:#e40058;}.cb3{flex:1;background:#5c94fc;}.cb4{flex:1;background:#38b000;}.cb5{flex:1;background:#c84b0c;}
+.crowd-strip{display:flex;gap:1px;background:#5c94fc;height:32px;align-items:flex-end;padding:0 4px;overflow:hidden;}
+.sky-strip{background:#5c94fc;height:32px;display:flex;gap:1px;align-items:flex-end;padding:0 6px;overflow:hidden;}
+.grass{background:#38b000;height:8px;border-top:3px solid #fff;}
+.landing-body{padding:32px 20px 48px;text-align:center;}
+.logo-img{width:96px;height:96px;object-fit:contain;margin:0 auto 24px;display:block;}
+.l-title{font-family:'Paris2024',sans-serif;font-size:28px;color:#fc0;letter-spacing:0.04em;margin-bottom:6px;text-shadow:3px 3px #000;line-height:1.1;}
+.l-sub{font-size:6px;color:#aaa;letter-spacing:0.1em;margin-bottom:36px;}
+.l-question{font-family:'Paris2024',sans-serif;font-size:22px;color:#fff;letter-spacing:0.06em;margin-bottom:24px;}
+.l-highlight{color:#fc0;}
+.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:440px;margin:0 auto 28px;}
+.role-card{border:2px solid #444;padding:18px 12px;cursor:pointer;text-align:center;background:#000;transition:all 0.1s;}
+.role-card:hover{border-color:#fc0;background:#000080;}
+.role-card.athlete:hover{border-color:#fc0;}.role-card.spectator:hover{border-color:#e40058;}.role-card.vendor:hover{border-color:#38b000;}.role-card.sponsor:hover{border-color:#5c94fc;}
+.rc-icon{font-size:22px;margin-bottom:8px;display:block;}
+.rc-label{font-family:'Paris2024',sans-serif;font-size:16px;letter-spacing:0.08em;}
+.rc-sub{font-size:5px;color:#666;margin-top:5px;line-height:1.7;}
+.select-arrow{font-size:6px;color:#fc0;letter-spacing:0.1em;}
+.ticker-wrap{background:#000;border-top:2px solid #333;overflow:hidden;white-space:nowrap;padding:4px 0;}
+.ticker-inner{display:inline-flex;gap:32px;animation:ntick 22s linear infinite;}
+.ticker-inner span{font-size:5px;color:#fc0;letter-spacing:0.1em;}
+@keyframes ntick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.page-content{padding:16px;max-width:480px;margin:0 auto;}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #333;}
+.ph-back{font-size:6px;color:#aaa;cursor:pointer;letter-spacing:0.08em;border:1px solid #444;padding:5px 8px;background:#000;}
+.ph-back:hover{border-color:#fc0;color:#fc0;}
+.ph-title{font-family:'Paris2024',sans-serif;font-size:18px;letter-spacing:0.06em;}
+.ph-badge{font-size:5px;padding:4px 8px;border:1px solid;}
+.nfl{font-size:6px;color:#aaa;margin-bottom:4px;letter-spacing:0.08em;display:block;}
+.nfi{width:100%;background:#000;border:2px solid #333;color:#fc0;padding:8px 10px;font-size:7px;font-family:'Press Start 2P',monospace;outline:none;margin-bottom:10px;}
+.nfi:focus{border-color:#fc0;}
+.nfi::placeholder{color:#333;}
+.nfsel{width:100%;background:#000;border:2px solid #333;color:#fc0;padding:8px 10px;font-size:6px;font-family:'Press Start 2P',monospace;outline:none;cursor:pointer;margin-bottom:10px;}
+.nfsel option{background:#000;}
+.pill-row{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
+.epill{font-size:5px;padding:5px 7px;border:1px solid #333;color:#555;cursor:pointer;font-family:'Press Start 2P',monospace;background:#000;white-space:nowrap;}
+.epill.on{border-color:#fc0;color:#fc0;}
+.fcheck{display:flex;gap:6px;align-items:flex-start;margin-bottom:10px;}
+.fcheck input{accent-color:#fc0;flex-shrink:0;margin-top:2px;}
+.fcheck label{font-size:5px;color:#666;line-height:1.9;cursor:pointer;}
+.submit-btn{width:100%;padding:10px;font-family:'Paris2024',sans-serif;font-size:16px;letter-spacing:0.1em;cursor:pointer;border:none;margin-top:4px;}
+.btn-gold{background:#fc0;color:#000;}.btn-green{background:#38b000;color:#fff;}.btn-blue{background:#5c94fc;color:#fff;}.btn-red{background:#e40058;color:#fff;}
+.submit-btn:active{transform:translateY(1px);}
+.submit-btn:disabled{opacity:0.5;cursor:not-allowed;}
+.suc{display:none;font-size:6px;text-align:center;padding:10px;border:1px solid #38b000;color:#38b000;margin-top:10px;line-height:2;}
+.err{display:none;font-size:6px;text-align:center;padding:8px;border:1px solid #e40058;color:#e40058;margin-top:8px;}
+.info-panel{border:2px solid #333;padding:10px;margin-bottom:12px;}
+.ip-title{font-family:'Paris2024',sans-serif;font-size:14px;color:#fc0;margin-bottom:8px;border-bottom:1px solid #333;padding-bottom:5px;letter-spacing:0.06em;}
+.ip-row{display:flex;justify-content:space-between;margin-bottom:5px;}
+.ip-label{font-size:5px;color:#666;}.ip-val{font-size:5px;color:#fff;}
+.perk-list{display:flex;flex-direction:column;gap:4px;}
+.perk-item{font-size:5px;color:#aaa;padding:4px 6px;border-left:2px solid #fc0;line-height:1.8;}
+.loading{display:none;font-size:6px;color:#fc0;text-align:center;padding:8px;}
+</style>
+</head>
+<body>
+<div class="nes">
+<div class="scanlines"></div>
+<div class="page on" id="pg-landing">
+  <div class="color-bar"><div class="cb1"></div><div class="cb2"></div><div class="cb3"></div><div class="cb4"></div><div class="cb5"></div></div>
+  <div class="crowd-strip" id="crowd-landing"></div>
+  <div class="grass"></div>
+  <div class="landing-body">
+    <img class="logo-img" src="logo.png" alt="Interhouse Sports">
+    <div class="l-title">INTERHOUSE SPORTS 26'</div>
+    <div class="l-sub">SEP 12, 2025 &middot; MAIN OVAL &middot; 8 EVENTS &middot; 4 HOUSES</div>
+    <div class="l-question">WHO ARE <span class="l-highlight">YOU?</span></div>
+    <div class="role-grid">
+      <div class="role-card athlete" onclick="goTo('athlete')"><span class="rc-icon">&#127939;</span><div class="rc-label" style="color:#fc0;">ATHLETE</div><div class="rc-sub">Compete for your house</div></div>
+      <div class="role-card spectator" onclick="goTo('spectator')"><span class="rc-icon">&#127914;</span><div class="rc-label" style="color:#e40058;">SPECTATOR</div><div class="rc-sub">Come watch and cheer</div></div>
+      <div class="role-card vendor" onclick="goTo('vendor')"><span class="rc-icon">&#127978;</span><div class="rc-label" style="color:#38b000;">VENDOR</div><div class="rc-sub">Set up a stall on the day</div></div>
+      <div class="role-card sponsor" onclick="goTo('sponsor')"><span class="rc-icon">&#11088;</span><div class="rc-label" style="color:#5c94fc;">SPONSOR</div><div class="rc-sub">Support the games</div></div>
+    </div>
+    <div class="select-arrow blink">SELECT YOUR ROLE TO CONTINUE</div>
+  </div>
+</div>
+<div class="page" id="pg-athlete">
+  <div class="color-bar"><div class="cb1"></div><div class="cb1"></div><div class="cb1"></div><div class="cb1"></div><div class="cb1"></div></div>
+  <div class="sky-strip" id="sky-athlete"></div><div class="grass"></div>
+  <div class="page-content fade-in">
+    <div class="page-header"><div class="ph-back" onclick="goTo('landing')">&#9664; BACK</div><div class="ph-title" style="color:#fc0;">ATHLETE</div><div class="ph-badge" style="border-color:#fc0;color:#fc0;">OPEN</div></div>
+    <label class="nfl">FULL NAME</label><input class="nfi" id="a-name" placeholder="YOUR NAME" type="text">
+    <label class="nfl">EMAIL</label><input class="nfi" id="a-email" placeholder="YOUR EMAIL" type="email">
+    <label class="nfl">HOUSE</label>
+    <select class="nfsel" id="a-house"><option value="">SELECT HOUSE</option><option>Phoenix</option><option>Titan</option><option>Viper</option><option>Storm</option></select>
+    <label class="nfl">EVENTS</label>
+    <div class="pill-row">
+      <div class="epill" onclick="this.classList.toggle('on')">100M</div>
+      <div class="epill" onclick="this.classList.toggle('on')">LONG JUMP</div>
+      <div class="epill" onclick="this.classList.toggle('on')">SHOT PUT</div>
+      <div class="epill" onclick="this.classList.toggle('on')">HIGH JUMP</div>
+      <div class="epill" onclick="this.classList.toggle('on')">TUG OF WAR</div>
+      <div class="epill" onclick="this.classList.toggle('on')">4X100</div>
+      <div class="epill" onclick="this.classList.toggle('on')">JAVELIN</div>
+    </div>
+    <div class="fcheck"><input type="checkbox" id="a-waiver"><label for="a-waiver">I AM FIT TO COMPETE AND AGREE TO THE WAIVER</label></div>
+    <div class="loading" id="l-athlete">SUBMITTING...</div>
+    <div class="err" id="err-athlete"></div>
+    <button class="submit-btn btn-gold" id="btn-athlete" onclick="sub('athlete')">PRESS START &#9658;</button>
+    <div class="suc" id="suc-a">REGISTERED! SEE YOU ON THE FIELD.</div>
+  </div>
+  <div class="ticker-wrap"><div class="ticker-inner"><span>ATHLETE REG</span><span>///</span><span>COMPETE FOR YOUR HOUSE</span><span>///</span><span>8 EVENTS</span><span>///</span><span>CLOSES SEP 1</span><span>///</span><span>ATHLETE REG</span><span>///</span><span>COMPETE FOR YOUR HOUSE</span><span>///</span><span>8 EVENTS</span><span>///</span><span>CLOSES SEP 1</span><span>///</span></div></div>
+</div>
+<div class="page" id="pg-spectator">
+  <div class="color-bar"><div class="cb2"></div><div class="cb2"></div><div class="cb2"></div><div class="cb2"></div><div class="cb2"></div></div>
+  <div class="sky-strip" id="sky-spectator"></div><div class="grass"></div>
+  <div class="page-content fade-in">
+    <div class="page-header"><div class="ph-back" onclick="goTo('landing')">&#9664; BACK</div><div class="ph-title" style="color:#e40058;">SPECTATOR</div><div class="ph-badge" style="border-color:#e40058;color:#e40058;">FREE</div></div>
+    <label class="nfl">FULL NAME</label><input class="nfi" id="sp-name" placeholder="YOUR NAME" type="text">
+    <label class="nfl">EMAIL</label><input class="nfi" id="sp-email" placeholder="YOUR EMAIL" type="email">
+    <label class="nfl">HOUSE SUPPORTING</label>
+    <select class="nfsel" id="sp-house"><option value="">NEUTRAL</option><option>Phoenix</option><option>Titan</option><option>Viper</option><option>Storm</option></select>
+    <label class="nfl">NUMBER OF TICKETS</label>
+    <select class="nfsel" id="sp-qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
+    <div class="info-panel">
+      <div class="ip-title">GAME DAY</div>
+      <div class="ip-row"><div class="ip-label">GATES OPEN</div><div class="ip-val">8:00 AM</div></div>
+      <div class="ip-row"><div class="ip-label">FIRST EVENT</div><div class="ip-val">9:00 AM</div></div>
+      <div class="ip-row"><div class="ip-label">AWARDS</div><div class="ip-val">3:30 PM</div></div>
+    </div>
+    <div class="loading" id="l-spectator">SUBMITTING...</div>
+    <div class="err" id="err-spectator"></div>
+    <button class="submit-btn btn-red" id="btn-spectator" onclick="sub('spectator')">GET MY TICKET &#9658;</button>
+    <div class="suc" id="suc-sp">TICKET CONFIRMED! SEE YOU SEP 12.</div>
+  </div>
+  <div class="ticker-wrap"><div class="ticker-inner"><span>SPECTATOR TICKETS</span><span>///</span><span>GATES OPEN 8:00AM</span><span>///</span><span>FREE ENTRY</span><span>///</span><span>SPECTATOR TICKETS</span><span>///</span><span>GATES OPEN 8:00AM</span><span>///</span><span>FREE ENTRY</span><span>///</span></div></div>
+</div>
+<div class="page" id="pg-vendor">
+  <div class="color-bar"><div class="cb4"></div><div class="cb4"></div><div class="cb4"></div><div class="cb4"></div><div class="cb4"></div></div>
+  <div class="sky-strip" id="sky-vendor"></div><div class="grass"></div>
+  <div class="page-content fade-in">
+    <div class="page-header"><div class="ph-back" onclick="goTo('landing')">&#9664; BACK</div><div class="ph-title" style="color:#38b000;">VENDOR</div><div class="ph-badge" style="border-color:#38b000;color:#38b000;">6 LEFT</div></div>
+    <label class="nfl">BUSINESS NAME</label><input class="nfi" id="v-biz" placeholder="YOUR STALL NAME" type="text">
+    <label class="nfl">CONTACT NAME</label><input class="nfi" id="v-name" placeholder="YOUR NAME" type="text">
+    <label class="nfl">EMAIL</label><input class="nfi" id="v-email" placeholder="YOUR EMAIL" type="email">
+    <label class="nfl">STALL TYPE</label>
+    <select class="nfsel" id="v-type"><option value="">SELECT TYPE</option><option>Food + Drink</option><option>Merchandise</option><option>Health + Wellness</option><option>Equipment</option><option>Charity</option><option>Other</option></select>
+    <div class="fcheck"><input type="checkbox" id="vt"><label for="vt">I AGREE TO VENDOR TERMS AND STALL FEES</label></div>
+    <div class="loading" id="l-vendor">SUBMITTING...</div>
+    <div class="err" id="err-vendor"></div>
+    <button class="submit-btn btn-green" id="btn-vendor" onclick="sub('vendor')">APPLY NOW &#9658;</button>
+    <div class="suc" id="suc-v">APPLICATION RECEIVED! WE WILL BE IN TOUCH.</div>
+  </div>
+  <div class="ticker-wrap"><div class="ticker-inner"><span>VENDOR APPS</span><span>///</span><span>6 SPOTS LEFT</span><span>///</span><span>SETUP FROM 6:30AM</span><span>///</span><span>VENDOR APPS</span><span>///</span><span>6 SPOTS LEFT</span><span>///</span><span>SETUP FROM 6:30AM</span><span>///</span></div></div>
+</div>
+<div class="page" id="pg-sponsor">
+  <div class="color-bar"><div class="cb3"></div><div class="cb3"></div><div class="cb3"></div><div class="cb3"></div><div class="cb3"></div></div>
+  <div class="sky-strip" id="sky-sponsor"></div><div class="grass"></div>
+  <div class="page-content fade-in">
+    <div class="page-header"><div class="ph-back" onclick="goTo('landing')">&#9664; BACK</div><div class="ph-title" style="color:#5c94fc;">SPONSOR</div><div class="ph-badge" style="border-color:#5c94fc;color:#5c94fc;">LIMITED</div></div>
+    <div class="info-panel" style="border-color:#5c94fc;margin-bottom:12px;">
+      <div class="ip-title" style="color:#5c94fc;">TIERS</div>
+      <div class="perk-list">
+        <div class="perk-item" style="border-color:#fc0;"><span style="color:#fc0;">GOLD</span> - Logo on all materials + PA mention + premium stall</div>
+        <div class="perk-item" style="border-color:#aaa;"><span style="color:#aaa;">SILVER</span> - Logo on banners + PA mention</div>
+        <div class="perk-item" style="border-color:#c84b0c;"><span style="color:#c84b0c;">BRONZE</span> - Logo on print + social shoutout</div>
+        <div class="perk-item" style="border-color:#333;"><span style="color:#888;">COMMUNITY</span> - Social + programme listing</div>
+      </div>
+    </div>
+    <label class="nfl">COMPANY NAME</label><input class="nfi" id="sp2-biz" placeholder="ORGANISATION" type="text">
+    <label class="nfl">CONTACT NAME</label><input class="nfi" id="sp2-name" placeholder="YOUR NAME" type="text">
+    <label class="nfl">EMAIL</label><input class="nfi" id="sp2-email" placeholder="YOUR EMAIL" type="email">
+    <label class="nfl">TIER INTEREST</label>
+    <select class="nfsel" id="sp2-tier"><option value="">SELECT TIER</option><option>Gold</option><option>Silver</option><option>Bronze</option><option>Community</option></select>
+    <div class="loading" id="l-sponsor">SUBMITTING...</div>
+    <div class="err" id="err-sponsor"></div>
+    <button class="submit-btn btn-blue" id="btn-sponsor" onclick="sub('sponsor')">REGISTER INTEREST &#9658;</button>
+    <div class="suc" id="suc-sp2">ENQUIRY RECEIVED! WE WILL REACH OUT SHORTLY.</div>
+  </div>
+  <div class="ticker-wrap"><div class="ticker-inner"><span>SPONSORSHIP OPEN</span><span>///</span><span>GOLD SILVER BRONZE COMMUNITY</span><span>///</span><span>REGISTER TODAY</span><span>///</span><span>SPONSORSHIP OPEN</span><span>///</span><span>GOLD SILVER BRONZE COMMUNITY</span><span>///</span><span>REGISTER TODAY</span><span>///</span></div></div>
+</div>
+</div>
 <script>
-const houseColors={Phoenix:'#D85A30',Titan:'#378ADD',Viper:'#1D9E75',Storm:'#7F77DD'};
-function switchType(type,btn){document.querySelectorAll('.type-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.form-panel').forEach(p=>p.classList.remove('active'));document.getElementById('panel-'+type).classList.add('active');}
-function makeBarcode(id){const el=document.getElementById(id);if(!el)return;el.innerHTML='';for(let i=0;i<40;i++){const b=document.createElement('div');b.className='tp-bar';b.style.height=(6+Math.random()*16)+'px';b.style.width=Math.random()>0.55?'1px':'2px';el.appendChild(b);}}
-function serial(){return 'IHS-2025-'+Math.floor(Math.random()*900000+100000);}
-function submitForm(type){if(type==='athlete'){const first=document.getElementById('a-first').value.trim();const email=document.getElementById('a-email').value.trim();const house=document.getElementById('a-house').value;if(!first||!email||!house){alert('Please fill in name email and house.');return;}document.getElementById('tp-a-name').textContent=first+' '+(document.getElementById('a-last').value.trim()||'');document.getElementById('tp-a-badge').textContent=house;document.getElementById('tp-a-badge').style.background=houseColors[house]||'#888';makeBarcode('tp-a-bc');document.getElementById('tp-a-serial').textContent=serial();document.getElementById('tp-athlete').style.display='block';document.getElementById('st-athletes').textContent=parseInt(document.getElementById('st-athletes').textContent)+1;}if(type==='attendee'){const first=document.getElementById('at-first').value.trim();const email=document.getElementById('at-email').value.trim();if(!first||!email){alert('Please fill in your name and email.');return;}const house=document.getElementById('at-house').value;document.getElementById('tp-at-name').textContent=first+' '+(document.getElementById('at-last').value.trim()||'');if(house){document.getElementById('tp-at-badge').textContent=house+' Fan';document.getElementById('tp-at-badge').style.background=houseColors[house]||'#888';}makeBarcode('tp-at-bc');document.getElementById('tp-at-serial').textContent=serial();document.getElementById('tp-attendee').style.display='block';document.getElementById('st-attendees').textContent=parseInt(document.getElementById('st-attendees').textContent)+1;}if(type==='vendor'){const biz=document.getElementById('v-biz').value.trim();const email=document.getElementById('v-email').value.trim();const vtype=document.getElementById('v-type').value;const terms=document.getElementById('v-terms').checked;if(!biz||!email||!vtype){alert('Please fill in business name email and stall type.');return;}if(!terms){alert('Please agree to the vendor terms.');return;}document.getElementById('tp-v-name').textContent=biz;document.getElementById('tp-v-type').textContent=vtype.split(' ')[0];makeBarcode('tp-v-bc');document.getElementById('tp-v-serial').textContent=serial();document.getElementById('tp-vendor').style.display='block';}}
-const target=new Date('2025-09-12T09:00:00');
-function updateCD(){const now=new Date();const diff=target-now;const pad=n=>String(Math.max(0,Math.floor(n))).padStart(2,'0');if(diff>0){document.getElementById('cd-d').textContent=pad(diff/86400000);document.getElementById('cd-h').textContent=pad((diff%86400000)/3600000);document.getElementById('cd-m').textContent=pad((diff%3600000)/60000);document.getElementById('cd-s').textContent=pad((diff%60000)/1000);}}
-updateCD();setInterval(updateCD,1000);
-</script></body></html>
+const SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+const CROWD_COLS=['#fc0','#5c94fc','#38b000','#e40058','#fff','#c84b0c','#aaa'];
+['crowd-landing','sky-athlete','sky-spectator','sky-vendor','sky-sponsor'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(!el)return;
+  for(let i=0;i<110;i++){
+    const p=document.createElement('div');
+    p.style.cssText=`width:6px;height:${6+Math.floor(Math.random()*14)}px;background:${CROWD_COLS[Math.floor(Math.random()*CROWD_COLS.length)]};flex-shrink:0;align-self:flex-end;`;
+    el.appendChild(p);
+  }
+});
+function goTo(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.getElementById(page==='landing'?'pg-landing':'pg-'+page).classList.add('on');
+  window.scrollTo(0,0);
+}
+async function sub(type){
+  const configs={
+    athlete:{fields:{name:'a-name',email:'a-email',house:'a-house'},suc:'suc-a',btn:'btn-athlete',load:'l-athlete',err:'err-athlete',
+      extras(){const events=[...document.querySelectorAll('#pg-athlete .epill.on')].map(e=>e.textContent).join(', ');if(!document.getElementById('a-waiver').checked){alert('PLEASE AGREE TO THE WAIVER');return null;}return{events:events||'NONE'};}},
+    spectator:{fields:{name:'sp-name',email:'sp-email',house:'sp-house',tickets:'sp-qty'},suc:'suc-sp',btn:'btn-spectator',load:'l-spectator',err:'err-spectator',extras(){return{};}},
+    vendor:{fields:{business:'v-biz',name:'v-name',email:'v-email',stallType:'v-type'},suc:'suc-v',btn:'btn-vendor',load:'l-vendor',err:'err-vendor',
+      extras(){if(!document.getElementById('vt').checked){alert('PLEASE AGREE TO VENDOR TERMS');return null;}return{};}},
+    sponsor:{fields:{company:'sp2-biz',name:'sp2-name',email:'sp2-email',tier:'sp2-tier'},suc:'suc-sp2',btn:'btn-sponsor',load:'l-sponsor',err:'err-sponsor',extras(){return{};}}
+  };
+  const cfg=configs[type];
+  const data={type,timestamp:new Date().toISOString()};
+  for(const[key,id] of Object.entries(cfg.fields)){
+    const val=document.getElementById(id)?.value?.trim()||'';
+    if(!val&&key!=='house'&&key!=='tickets'&&key!=='house'){alert('PLEASE FILL IN ALL REQUIRED FIELDS');return;}
+    data[key]=val;
+  }
+  const extras=cfg.extras();
+  if(extras===null)return;
+  Object.assign(data,extras);
+  const btn=document.getElementById(cfg.btn);
+  const load=document.getElementById(cfg.load);
+  const errEl=document.getElementById(cfg.err);
+  btn.disabled=true;load.style.display='block';errEl.style.display='none';
+  try{
+    await fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    load.style.display='none';
+    document.getElementById(cfg.suc).style.display='block';
+    btn.style.display='none';
+  }catch(e){
+    load.style.display='none';
+    errEl.textContent='CONNECTION ERROR. TRY AGAIN.';
+    errEl.style.display='block';
+    btn.disabled=false;
+  }
+}
+</script>
+</body>
+</html>

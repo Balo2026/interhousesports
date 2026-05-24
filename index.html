@@ -70,6 +70,26 @@
 .ig-handle{font-size:7px;color:#fc0;letter-spacing:0.1em;}
 .ig-link:hover .ig-handle{color:#fff;}
 .footer-copy{font-size:5px;color:#444;letter-spacing:0.1em;}
+
+.about-hero-title{font-family:'Paris2024',sans-serif;font-size:32px;color:#fc0;line-height:1.1;margin-bottom:16px;text-shadow:2px 2px #000;}
+.about-body{font-size:5px;color:#aaa;line-height:2.4;letter-spacing:0.06em;margin-bottom:24px;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:28px;}
+.stat-box{border:1px solid #333;padding:12px 6px;text-align:center;background:#0d0d2e;}
+.stat-icon{font-size:16px;margin-bottom:6px;}
+.stat-val{font-family:'Paris2024',sans-serif;font-size:14px;color:#fc0;margin-bottom:4px;}
+.stat-lbl{font-size:5px;color:#666;letter-spacing:0.08em;line-height:1.8;}
+.sports-title{font-family:'Paris2024',sans-serif;font-size:18px;color:#e40058;margin-bottom:6px;text-align:center;}
+.sports-sub{font-size:5px;color:#555;letter-spacing:0.08em;text-align:center;margin-bottom:16px;line-height:1.8;}
+.sports-grid{display:flex;flex-direction:column;gap:8px;}
+.sport-card{border:1px solid #222;background:#0a0a1e;padding:12px;}
+.sport-img{height:40px;margin-bottom:8px;border:1px solid #1a1a3e;background:#1a1a3e;display:flex;align-items:center;justify-content:center;}
+.sport-track{background:linear-gradient(90deg,#1a1a3e 0%,#2a1a0e 100%);}
+.sport-relay{background:linear-gradient(90deg,#0e1a2e 0%,#1a2e0e 100%);}
+.sport-sack{background:linear-gradient(90deg,#1a0e2e 0%,#2e1a0e 100%);}
+.sport-tug{background:linear-gradient(90deg,#2e0e0e 0%,#1a1a3e 100%);}
+.sport-jump{background:linear-gradient(90deg,#0e2e1a 0%,#1a1a3e 100%);}
+.sport-name{font-size:7px;color:#fc0;letter-spacing:0.1em;margin-bottom:6px;}
+.sport-desc{font-size:5px;color:#666;line-height:2.2;letter-spacing:0.04em;}
 </style></head><body>
 <div class="nes"><div class="scanlines"></div>
 
@@ -425,7 +445,7 @@
     <div class="l-date">AUGUST 8, 2026</div>
     <div class="l-venue">UNIVERSITY STADIUM</div>
     <div class="l-venue">225 CHANCELLOR MATHESON DR.</div>
-    <div class="l-houses">8 HOUSES &nbsp;/&nbsp; 5 EVENTS</div>
+    
     <div class="l-question">WHO ARE <span class="l-highlight">YOU?</span></div>
     <div class="role-grid">
       <div class="role-card athlete" onclick="goTo('athlete')"><span class="rc-icon">&#127939;</span><div class="rc-label" style="color:#fc0;">ATHLETE</div><div class="rc-sub">Compete for your house</div></div>
@@ -437,8 +457,7 @@
 
     <div class="about-section">
       <div class="about-divider"></div>
-      <div class="about-title" onclick="toggleAbout()" style="cursor:pointer;">ABOUT INTERHOUSE SPORTS &#9654;</div>
-      <div class="about-text" id="about-text" style="display:none;">Interhouse Sports is an annual one-day games where students compete across houses in track and field events. Built on friendly rivalry, school spirit, and the joy of showing up for your team.</div>
+      <div class="about-title" onclick="goTo('about')" style="cursor:pointer;">ABOUT INTERHOUSE SPORTS &#9654;</div>
     </div>
 
     <div class="site-footer">
@@ -1888,6 +1907,417 @@
   <div class="ticker-wrap"><div class="ticker-inner"><span>SPONSORSHIP OPEN</span><span>///</span><span>REGISTER INTEREST TODAY</span><span>///</span><span>AUG 8 2026</span><span>///</span><span>UNIVERSITY STADIUM</span><span>///</span><span>SPONSORSHIP OPEN</span><span>///</span><span>REGISTER INTEREST TODAY</span><span>///</span><span>AUG 8 2026</span><span>///</span><span>UNIVERSITY STADIUM</span><span>///</span></div></div>
 </div>
 
+
+<div class="page" id="pg-about">
+  <div class="color-bar"><div class="cb1"></div><div class="cb2"></div><div class="cb3"></div><div class="cb4"></div><div class="cb5"></div></div>
+  <div class="skyline-strip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1568 36" width="100%" height="32" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges" style="image-rendering:pixelated">
+
+  
+  <rect x="0" y="0" width="380" height="3" fill="#e89a3c"></rect>
+  <rect x="400" y="0" width="380" height="3" fill="#9c2a6e"></rect>
+  <rect x="800" y="0" width="380" height="3" fill="#3a8a4a"></rect>
+  <rect x="1200" y="0" width="368" height="3" fill="#c33f3c"></rect>
+
+  
+  <g transform="translate(120 0)">
+    
+    <rect x="0" y="14" width="50" height="14" fill="#d4c8a8"></rect>
+    <rect x="0" y="26" width="50" height="2" fill="#a89a78"></rect>
+    
+    <rect x="4" y="17" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="10" y="17" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="16" y="17" width="2" height="3" fill="#1a2238"></rect>
+    <rect x="22" y="17" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="28" y="17" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="34" y="17" width="2" height="3" fill="#1a2238"></rect>
+    <rect x="40" y="17" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="46" y="17" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="4" y="22" width="2" height="3" fill="#1a2238"></rect>
+    <rect x="10" y="22" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="16" y="22" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="22" y="22" width="2" height="3" fill="#1a2238"></rect>
+    <rect x="28" y="22" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="34" y="22" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="40" y="22" width="2" height="3" fill="#1a2238"></rect>
+    <rect x="46" y="22" width="2" height="3" fill="#ffe78a"></rect>
+    
+    <rect x="4" y="12" width="42" height="2" fill="#3a8a6a"></rect>
+    <rect x="8" y="10" width="34" height="2" fill="#3a8a6a"></rect>
+    <rect x="12" y="8" width="26" height="2" fill="#3a8a6a"></rect>
+    <rect x="0" y="12" width="4" height="2" fill="#3a8a6a"></rect>
+    <rect x="0" y="10" width="3" height="2" fill="#3a8a6a"></rect>
+    <rect x="1" y="8" width="1" height="2" fill="#3a8a6a"></rect>
+    <rect x="46" y="12" width="4" height="2" fill="#3a8a6a"></rect>
+    <rect x="47" y="10" width="3" height="2" fill="#3a8a6a"></rect>
+    <rect x="48" y="8" width="1" height="2" fill="#3a8a6a"></rect>
+    <rect x="23" y="6" width="4" height="2" fill="#3a8a6a"></rect>
+    <rect x="24" y="4" width="2" height="2" fill="#3a8a6a"></rect>
+  </g>
+
+  
+  <g transform="translate(400 0)">
+    <rect x="0" y="6" width="14" height="22" fill="#1a2238"></rect>
+    <rect x="3" y="6" width="2" height="22" fill="#2a3548"></rect>
+    <rect x="9" y="6" width="2" height="22" fill="#2a3548"></rect>
+    <rect x="1" y="9" width="1" height="1" fill="#ffe78a"></rect>
+    <rect x="6" y="11" width="1" height="1" fill="#ffe78a"></rect>
+    <rect x="12" y="13" width="1" height="1" fill="#ffe78a"></rect>
+    <rect x="6" y="15" width="1" height="1" fill="#ffe78a"></rect>
+    <rect x="1" y="17" width="1" height="1" fill="#ffe78a"></rect>
+    <rect x="12" y="19" width="1" height="1" fill="#ffe78a"></rect>
+    <rect x="6" y="21" width="1" height="1" fill="#ffe78a"></rect>
+    <rect x="1" y="23" width="1" height="1" fill="#ffe78a"></rect>
+    <rect x="12" y="25" width="1" height="1" fill="#ffe78a"></rect>
+    <rect x="4" y="4" width="6" height="2" fill="#0a0a14"></rect>
+    <rect x="6" y="0" width="2" height="4" fill="#0a0a14"></rect>
+  </g>
+
+  
+  <g transform="translate(680 0)">
+    
+    <path d="M 8 20 Q 60 6 112 20" stroke="#f1ece1" stroke-width="2" fill="none"></path>
+    <path d="M 108 20 Q 160 6 212 20" stroke="#f1ece1" stroke-width="2" fill="none"></path>
+    <path d="M 8 21 Q 60 8 112 21" stroke="#cfd8e0" stroke-width="1" fill="none" opacity="0.7"></path>
+    <path d="M 108 21 Q 160 8 212 21" stroke="#cfd8e0" stroke-width="1" fill="none" opacity="0.7"></path>
+    <rect x="59" y="6" width="2" height="2" fill="#f1ece1"></rect>
+    <rect x="159" y="6" width="2" height="2" fill="#f1ece1"></rect>
+    
+    <rect x="4" y="20" width="212" height="2" fill="#5b6b86"></rect>
+    <rect x="0" y="22" width="220" height="6" fill="#3f4e6e"></rect>
+    <rect x="0" y="22" width="220" height="1" fill="#6b7da0"></rect>
+    
+    <rect x="8" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="28" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="48" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="68" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="88" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="108" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="128" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="148" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="168" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="188" y="25" width="2" height="3" fill="#2a3550"></rect>
+    <rect x="208" y="25" width="2" height="3" fill="#2a3550"></rect>
+    
+    <rect x="2" y="14" width="2" height="6" fill="#7a8aa8"></rect>
+    <rect x="1" y="13" width="4" height="1" fill="#ffe78a"></rect>
+    <rect x="216" y="14" width="2" height="6" fill="#7a8aa8"></rect>
+    <rect x="215" y="13" width="4" height="1" fill="#ffe78a"></rect>
+    
+    <rect x="98" y="16" width="24" height="6" fill="#0a1428"></rect>
+    <rect x="98" y="16" width="24" height="1" fill="#f4d870"></rect>
+    <rect x="98" y="21" width="24" height="1" fill="#f4d870"></rect>
+    <rect x="102" y="18" width="1" height="3" fill="#f4d870"></rect>
+    <rect x="103" y="18" width="2" height="1" fill="#f4d870"></rect>
+    <rect x="105" y="18" width="1" height="3" fill="#f4d870"></rect>
+    <rect x="103" y="19" width="2" height="1" fill="#f4d870"></rect>
+    <rect x="109" y="18" width="1" height="3" fill="#f4d870"></rect>
+    <rect x="110" y="18" width="3" height="1" fill="#f4d870"></rect>
+    <rect x="113" y="18" width="1" height="3" fill="#f4d870"></rect>
+    <rect x="110" y="19" width="3" height="1" fill="#f4d870"></rect>
+  </g>
+
+  
+  <g transform="translate(1140 0)">
+    
+    <rect x="0" y="22" width="70" height="6" fill="#8a7a64"></rect>
+    <rect x="4" y="20" width="62" height="2" fill="#8a7a64"></rect>
+    <rect x="10" y="18" width="50" height="2" fill="#8a7a64"></rect>
+    
+    <path d="M 18 18 Q 16 8 35 7 Q 56 6 60 12 Q 64 18 56 18 Z" fill="#6b88b0"></path>
+    <path d="M 18 18 Q 16 8 35 7 Q 56 6 60 12" fill="none" stroke="#cfe0f0" stroke-width="1" opacity="0.6"></path>
+    <line x1="24" y1="17" x2="26" y2="10" stroke="#cfe0f0" stroke-width="0.5" opacity="0.7"></line>
+    <line x1="32" y1="17" x2="34" y2="8" stroke="#cfe0f0" stroke-width="0.5" opacity="0.7"></line>
+    <line x1="40" y1="17" x2="42" y2="8" stroke="#cfe0f0" stroke-width="0.5" opacity="0.7"></line>
+    <line x1="48" y1="17" x2="50" y2="9" stroke="#cfe0f0" stroke-width="0.5" opacity="0.7"></line>
+    
+    <rect x="60" y="2" width="3" height="16" fill="#8aa8c8"></rect>
+    <rect x="61" y="2" width="1" height="16" fill="#cfe0f0"></rect>
+    <rect x="61" y="-2" width="1" height="4" fill="#1a2238"></rect>
+    
+    <rect x="6" y="25" width="3" height="2" fill="#ffe78a"></rect>
+    <rect x="14" y="25" width="3" height="2" fill="#ffe78a"></rect>
+    <rect x="24" y="25" width="3" height="2" fill="#ffe78a"></rect>
+    <rect x="34" y="25" width="3" height="2" fill="#ffe78a"></rect>
+    <rect x="44" y="25" width="3" height="2" fill="#ffe78a"></rect>
+    <rect x="54" y="25" width="3" height="2" fill="#ffe78a"></rect>
+    <rect x="64" y="25" width="3" height="2" fill="#ffe78a"></rect>
+  </g>
+
+  
+  <g transform="translate(1340 0)">
+    <rect x="0" y="22" width="90" height="6" fill="#d4c8a8"></rect>
+    <rect x="6" y="20" width="78" height="2" fill="#d4c8a8"></rect>
+    <rect x="8" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="14" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="20" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="26" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="32" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="38" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="44" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="50" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="56" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="62" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="68" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="74" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="80" y="22" width="1" height="6" fill="#a89a78"></rect>
+    <rect x="0" y="27" width="90" height="1" fill="#a89a78"></rect>
+    <rect x="18" y="18" width="54" height="2" fill="#d4c8a8"></rect>
+    <rect x="30" y="14" width="30" height="4" fill="#a89a78"></rect>
+    <rect x="32" y="13" width="26" height="1" fill="#d4c8a8"></rect>
+    
+    <path d="M 32 13 Q 45 4 58 13 Z" fill="#c8baa0"></path>
+    <path d="M 32 13 Q 45 4 58 13" stroke="#e8e0c8" stroke-width="0.5" fill="none" opacity="0.6"></path>
+    
+    <rect x="44" y="1" width="2" height="4" fill="#f4d870"></rect>
+    <rect x="43" y="2" width="1" height="1" fill="#f4d870"></rect>
+    <rect x="46" y="2" width="1" height="1" fill="#f4d870"></rect>
+    
+    <rect x="8" y="23" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="18" y="23" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="28" y="23" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="38" y="23" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="48" y="23" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="58" y="23" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="68" y="23" width="2" height="3" fill="#ffe78a"></rect>
+    <rect x="78" y="23" width="2" height="3" fill="#ffe78a"></rect>
+  </g>
+
+  
+  <defs>
+    
+    <g id="r1">
+      <g>
+        
+        <rect x="2" y="0" width="2" height="2" fill="#e3b896"></rect>
+        <rect x="2" y="-1" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#e0473e"></rect>
+        <rect x="0" y="2" width="1" height="2" fill="#e0473e"></rect>
+        <rect x="5" y="3" width="1" height="2" fill="#e0473e"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#1a1a28"></rect>
+        <rect x="0" y="7" width="2" height="2" fill="#e3b896"></rect>
+        <rect x="4" y="7" width="2" height="2" fill="#e3b896"></rect>
+        <rect x="0" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="4" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+      <g>
+        
+        <rect x="2" y="0" width="2" height="2" fill="#e3b896"></rect>
+        <rect x="2" y="-1" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#e0473e"></rect>
+        <rect x="0" y="3" width="1" height="2" fill="#e0473e"></rect>
+        <rect x="5" y="2" width="1" height="2" fill="#e0473e"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#1a1a28"></rect>
+        <rect x="1" y="7" width="2" height="2" fill="#e3b896"></rect>
+        <rect x="3" y="7" width="2" height="2" fill="#e3b896"></rect>
+        <rect x="1" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="3" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+    </g>
+
+    
+    <g id="r2">
+      <g>
+        <rect x="2" y="0" width="2" height="2" fill="#8a5e3a"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#f0c020"></rect>
+        <rect x="0" y="2" width="1" height="2" fill="#f0c020"></rect>
+        <rect x="5" y="3" width="1" height="2" fill="#f0c020"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#1f2a4a"></rect>
+        <rect x="0" y="7" width="2" height="2" fill="#8a5e3a"></rect>
+        <rect x="4" y="7" width="2" height="2" fill="#8a5e3a"></rect>
+        <rect x="0" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="4" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+      <g>
+        <rect x="2" y="0" width="2" height="2" fill="#8a5e3a"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#f0c020"></rect>
+        <rect x="0" y="3" width="1" height="2" fill="#f0c020"></rect>
+        <rect x="5" y="2" width="1" height="2" fill="#f0c020"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#1f2a4a"></rect>
+        <rect x="1" y="7" width="2" height="2" fill="#8a5e3a"></rect>
+        <rect x="3" y="7" width="2" height="2" fill="#8a5e3a"></rect>
+        <rect x="1" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="3" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+    </g>
+
+    
+    <g id="r3">
+      <g>
+        <rect x="2" y="0" width="2" height="2" fill="#c8966c"></rect>
+        <rect x="2" y="-1" width="2" height="1" fill="#c33f3c"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#3a8a4a"></rect>
+        <rect x="0" y="2" width="1" height="2" fill="#3a8a4a"></rect>
+        <rect x="5" y="3" width="1" height="2" fill="#3a8a4a"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#2a2a3a"></rect>
+        <rect x="0" y="7" width="2" height="2" fill="#c8966c"></rect>
+        <rect x="4" y="7" width="2" height="2" fill="#c8966c"></rect>
+        <rect x="0" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="4" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+      <g>
+        <rect x="2" y="0" width="2" height="2" fill="#c8966c"></rect>
+        <rect x="2" y="-1" width="2" height="1" fill="#c33f3c"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#3a8a4a"></rect>
+        <rect x="0" y="3" width="1" height="2" fill="#3a8a4a"></rect>
+        <rect x="5" y="2" width="1" height="2" fill="#3a8a4a"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#2a2a3a"></rect>
+        <rect x="1" y="7" width="2" height="2" fill="#c8966c"></rect>
+        <rect x="3" y="7" width="2" height="2" fill="#c8966c"></rect>
+        <rect x="1" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="3" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+    </g>
+
+    
+    <g id="r4">
+      <g>
+        <rect x="2" y="0" width="2" height="2" fill="#a87850"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#f1ece1"></rect>
+        <rect x="0" y="2" width="1" height="2" fill="#f1ece1"></rect>
+        <rect x="5" y="3" width="1" height="2" fill="#f1ece1"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#2a4a8a"></rect>
+        <rect x="0" y="7" width="2" height="2" fill="#a87850"></rect>
+        <rect x="4" y="7" width="2" height="2" fill="#a87850"></rect>
+        <rect x="0" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="4" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+      <g>
+        <rect x="2" y="0" width="2" height="2" fill="#a87850"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#f1ece1"></rect>
+        <rect x="0" y="3" width="1" height="2" fill="#f1ece1"></rect>
+        <rect x="5" y="2" width="1" height="2" fill="#f1ece1"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#2a4a8a"></rect>
+        <rect x="1" y="7" width="2" height="2" fill="#a87850"></rect>
+        <rect x="3" y="7" width="2" height="2" fill="#a87850"></rect>
+        <rect x="1" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="3" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+    </g>
+
+    
+    <g id="r5">
+      <g>
+        <rect x="2" y="0" width="2" height="2" fill="#5c3f2a"></rect>
+        <rect x="2" y="-1" width="2" height="1" fill="#f0c020"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#9c2a6e"></rect>
+        <rect x="0" y="2" width="1" height="2" fill="#9c2a6e"></rect>
+        <rect x="5" y="3" width="1" height="2" fill="#9c2a6e"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#1a1a28"></rect>
+        <rect x="0" y="7" width="2" height="2" fill="#5c3f2a"></rect>
+        <rect x="4" y="7" width="2" height="2" fill="#5c3f2a"></rect>
+        <rect x="0" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="4" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+      <g>
+        <rect x="2" y="0" width="2" height="2" fill="#5c3f2a"></rect>
+        <rect x="2" y="-1" width="2" height="1" fill="#f0c020"></rect>
+        <rect x="1" y="2" width="4" height="3" fill="#9c2a6e"></rect>
+        <rect x="0" y="3" width="1" height="2" fill="#9c2a6e"></rect>
+        <rect x="5" y="2" width="1" height="2" fill="#9c2a6e"></rect>
+        <rect x="1" y="5" width="4" height="2" fill="#1a1a28"></rect>
+        <rect x="1" y="7" width="2" height="2" fill="#5c3f2a"></rect>
+        <rect x="3" y="7" width="2" height="2" fill="#5c3f2a"></rect>
+        <rect x="1" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        <rect x="3" y="9" width="2" height="1" fill="#1a1a1a"></rect>
+        
+      </g>
+    </g>
+  </defs>
+
+  
+  
+  <use href="#r1" x="0" y="25">
+    
+  </use>
+  <use href="#r2" x="0" y="25">
+    
+  </use>
+  <use href="#r3" x="0" y="25">
+    
+  </use>
+  <use href="#r4" x="0" y="25">
+    
+  </use>
+  <use href="#r5" x="0" y="25">
+    
+  </use>
+
+</svg></div>
+  <div class="grass"></div>
+  <div class="page-content fade-in" style="max-width:520px;">
+    <div class="page-header">
+      <div class="ph-back" onclick="goTo('landing')">BACK</div>
+      <div class="ph-title" style="color:#fc0;">ABOUT</div>
+      <div style="width:48px;"></div>
+    </div>
+
+    <div class="about-hero-title">WINNIPEG'S<br>FIRST OF<br>ITS KIND</div>
+    <div class="about-body">Interhouse Sports is a one-day community event founded in 2023 where competition meets culture. Rooted in friendly rivalry and team spirit, it brings together people from all walks of life to compete in track, field, and street-style games backed by live DJs, food, and nonstop vibes. Whether you're here to run, cheer, or just catch the energy, there's a house for you.</div>
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-icon">&#128197;</div>
+        <div class="stat-val">AUG 8</div>
+        <div class="stat-lbl">SHOWDOWN DATE</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">&#127968;</div>
+        <div class="stat-val">8</div>
+        <div class="stat-lbl">PARTICIPATING HOUSES</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">&#128101;</div>
+        <div class="stat-val">300+</div>
+        <div class="stat-lbl">EAGER ATTENDEES</div>
+      </div>
+    </div>
+
+    <div class="sports-title">FEATURED SPORTS</div>
+    <div class="sports-sub">SOME OF THE WIDE RANGE OF SPORTS AND ACTIVITIES AT INTERHOUSE SPORTS 2026</div>
+
+    <div class="sports-grid">
+      <div class="sport-card">
+        <div class="sport-img sport-track"></div>
+        <div class="sport-name">100M, 200M, 400M SPRINTS</div>
+        <div class="sport-desc">THE CLASSICS. PURE SPEED, NO FLUFF &mdash; 100M, 200M, AND 400M SPRINTS TO TEST WHO'S REALLY GOT IT.</div>
+      </div>
+      <div class="sport-card">
+        <div class="sport-img sport-relay"></div>
+        <div class="sport-name">RELAY</div>
+        <div class="sport-desc">PASS THE BATON, TRUST YOUR SQUAD &mdash; THE RELAY IS WHERE SPEED MEETS TEAMWORK.</div>
+      </div>
+      <div class="sport-card">
+        <div class="sport-img sport-sack"></div>
+        <div class="sport-name">SACK RACE</div>
+        <div class="sport-desc">OLD-SCHOOL CHAOS MEETS FRIENDLY RIVALRY &mdash; HOP YOUR WAY TO VICTORY IN THE ULTIMATE SACK RACE SHOWDOWN.</div>
+      </div>
+      <div class="sport-card">
+        <div class="sport-img sport-tug"></div>
+        <div class="sport-name">TUG OF WAR</div>
+        <div class="sport-desc">HOUSE VS HOUSE. STRENGTH, STRATEGY, AND PURE DETERMINATION. HOLD THE LINE.</div>
+      </div>
+      <div class="sport-card" style="border-color:#e40058;">
+        <div class="sport-img sport-rlgl" style="background:linear-gradient(90deg,#2e0a0a 0%,#0a2e0a 100%);position:relative;overflow:hidden;">
+          <div style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#e40058;box-shadow:0 0 6px #e40058;"></div>
+          <div style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#38b000;box-shadow:0 0 6px #38b000;"></div>
+        </div>
+        <div class="sport-name" style="color:#e40058;">RED LIGHT GREEN LIGHT</div>
+        <div class="sport-desc">SQUID GAME-INSPIRED CHAOS &mdash; MOVE ON GREEN, FREEZE ON RED. ONE WRONG STEP AND YOU'RE OUT. LAST ONE MOVING WINS IT FOR THE HOUSE.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </div>
 <script>
 const SHEET_URL='YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
@@ -1907,5 +2337,4 @@ async function sub(type){
   try{await fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});ld.style.display='none';document.getElementById(cfg.s).style.display='block';btn.style.display='none';}
   catch(err){ld.style.display='none';er.textContent='CONNECTION ERROR. TRY AGAIN.';er.style.display='block';btn.disabled=false;}
 }
-function toggleAbout(){const el=document.getElementById("about-text");el.style.display=el.style.display==="none"?"block":"none";}
 </script></body></html>

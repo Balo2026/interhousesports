@@ -4,29 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Interhouse Sports 26'</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:'Paris2024';src:url('Paris2024.ttf') format('truetype');font-weight:normal;font-style:normal;}
+@font-face{font-family:'Paris2024';src:url('Paris2024.ttf') format('truetype');}
 *{box-sizing:border-box;margin:0;padding:0;}
 .nes{background:#000080;font-family:'Press Start 2P',monospace;color:#fff;min-height:100vh;position:relative;overflow:hidden;}
 .scanlines{position:fixed;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.18) 0px,rgba(0,0,0,0.18) 1px,transparent 1px,transparent 3px);pointer-events:none;z-index:99;}
-.page{display:none;position:relative;z-index:1;}
-.page.on{display:block;}
+.page{display:none;position:relative;z-index:1;}.page.on{display:block;}
 .blink{animation:bl 1s step-end infinite;}
 @keyframes bl{0%,100%{opacity:1;}50%{opacity:0;}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 .fade-in{animation:fadeIn 0.3s ease forwards;}
 .color-bar{height:4px;display:flex;}
 .cb1{flex:1;background:#fc0;}.cb2{flex:1;background:#e40058;}.cb3{flex:1;background:#5c94fc;}.cb4{flex:1;background:#38b000;}.cb5{flex:1;background:#c84b0c;}
-.crowd-strip{display:flex;gap:1px;background:#5c94fc;height:32px;align-items:flex-end;padding:0 4px;overflow:hidden;}
-.sky-strip{background:#5c94fc;height:32px;display:flex;gap:1px;align-items:flex-end;padding:0 6px;overflow:hidden;}
+.crowd-strip,.sky-strip{display:flex;gap:1px;background:#5c94fc;height:32px;align-items:flex-end;padding:0 4px;overflow:hidden;}
 .grass{background:#38b000;height:8px;border-top:3px solid #fff;}
 .landing-body{padding:32px 20px 48px;text-align:center;}
 .logo-img{width:96px;height:96px;object-fit:contain;margin:0 auto 24px;display:block;}
-.l-title{font-family:'Paris2024',sans-serif;font-size:28px;color:#fc0;letter-spacing:0.04em;margin-bottom:6px;text-shadow:3px 3px #000;line-height:1.1;}
+.l-title{font-family:'Paris2024',sans-serif;font-size:28px;color:#fc0;margin-bottom:6px;text-shadow:3px 3px #000;line-height:1.1;}
 .l-sub{font-size:6px;color:#aaa;letter-spacing:0.1em;margin-bottom:36px;}
-.l-question{font-family:'Paris2024',sans-serif;font-size:22px;color:#fff;letter-spacing:0.06em;margin-bottom:24px;}
+.l-question{font-family:'Paris2024',sans-serif;font-size:22px;color:#fff;margin-bottom:24px;}
 .l-highlight{color:#fc0;}
 .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:440px;margin:0 auto 28px;}
 .role-card{border:2px solid #444;padding:18px 12px;cursor:pointer;text-align:center;background:#000;transition:all 0.1s;}
@@ -35,21 +32,19 @@
 .rc-icon{font-size:22px;margin-bottom:8px;display:block;}
 .rc-label{font-family:'Paris2024',sans-serif;font-size:16px;letter-spacing:0.08em;}
 .rc-sub{font-size:5px;color:#666;margin-top:5px;line-height:1.7;}
-.select-arrow{font-size:6px;color:#fc0;letter-spacing:0.1em;}
+.select-arrow{font-size:6px;color:#fc0;}
 .ticker-wrap{background:#000;border-top:2px solid #333;overflow:hidden;white-space:nowrap;padding:4px 0;}
 .ticker-inner{display:inline-flex;gap:32px;animation:ntick 22s linear infinite;}
 .ticker-inner span{font-size:5px;color:#fc0;letter-spacing:0.1em;}
 @keyframes ntick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 .page-content{padding:16px;max-width:480px;margin:0 auto;}
 .page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #333;}
-.ph-back{font-size:6px;color:#aaa;cursor:pointer;letter-spacing:0.08em;border:1px solid #444;padding:5px 8px;background:#000;}
-.ph-back:hover{border-color:#fc0;color:#fc0;}
-.ph-title{font-family:'Paris2024',sans-serif;font-size:18px;letter-spacing:0.06em;}
+.ph-back{font-size:6px;color:#aaa;cursor:pointer;border:1px solid #444;padding:5px 8px;background:#000;}.ph-back:hover{border-color:#fc0;color:#fc0;}
+.ph-title{font-family:'Paris2024',sans-serif;font-size:18px;}
 .ph-badge{font-size:5px;padding:4px 8px;border:1px solid;}
-.nfl{font-size:6px;color:#aaa;margin-bottom:4px;letter-spacing:0.08em;display:block;}
+.nfl{font-size:6px;color:#aaa;margin-bottom:4px;display:block;}
 .nfi{width:100%;background:#000;border:2px solid #333;color:#fc0;padding:8px 10px;font-size:7px;font-family:'Press Start 2P',monospace;outline:none;margin-bottom:10px;}
-.nfi:focus{border-color:#fc0;}
-.nfi::placeholder{color:#333;}
+.nfi:focus{border-color:#fc0;}.nfi::placeholder{color:#333;}
 .nfsel{width:100%;background:#000;border:2px solid #333;color:#fc0;padding:8px 10px;font-size:6px;font-family:'Press Start 2P',monospace;outline:none;cursor:pointer;margin-bottom:10px;}
 .nfsel option{background:#000;}
 .pill-row{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
@@ -58,190 +53,135 @@
 .fcheck{display:flex;gap:6px;align-items:flex-start;margin-bottom:10px;}
 .fcheck input{accent-color:#fc0;flex-shrink:0;margin-top:2px;}
 .fcheck label{font-size:5px;color:#666;line-height:1.9;cursor:pointer;}
-.submit-btn{width:100%;padding:10px;font-family:'Paris2024',sans-serif;font-size:16px;letter-spacing:0.1em;cursor:pointer;border:none;margin-top:4px;}
+.submit-btn{width:100%;padding:10px;font-family:'Paris2024',sans-serif;font-size:16px;cursor:pointer;border:none;margin-top:4px;}
 .btn-gold{background:#fc0;color:#000;}.btn-green{background:#38b000;color:#fff;}.btn-blue{background:#5c94fc;color:#fff;}.btn-red{background:#e40058;color:#fff;}
-.submit-btn:active{transform:translateY(1px);}
-.submit-btn:disabled{opacity:0.5;cursor:not-allowed;}
+.submit-btn:active{transform:translateY(1px);}.submit-btn:disabled{opacity:0.5;cursor:not-allowed;}
 .suc{display:none;font-size:6px;text-align:center;padding:10px;border:1px solid #38b000;color:#38b000;margin-top:10px;line-height:2;}
 .err{display:none;font-size:6px;text-align:center;padding:8px;border:1px solid #e40058;color:#e40058;margin-top:8px;}
 .info-panel{border:2px solid #333;padding:10px;margin-bottom:12px;}
-.ip-title{font-family:'Paris2024',sans-serif;font-size:14px;color:#fc0;margin-bottom:8px;border-bottom:1px solid #333;padding-bottom:5px;letter-spacing:0.06em;}
+.ip-title{font-family:'Paris2024',sans-serif;font-size:14px;color:#fc0;margin-bottom:8px;border-bottom:1px solid #333;padding-bottom:5px;}
 .ip-row{display:flex;justify-content:space-between;margin-bottom:5px;}
 .ip-label{font-size:5px;color:#666;}.ip-val{font-size:5px;color:#fff;}
 .perk-list{display:flex;flex-direction:column;gap:4px;}
 .perk-item{font-size:5px;color:#aaa;padding:4px 6px;border-left:2px solid #fc0;line-height:1.8;}
 .loading{display:none;font-size:6px;color:#fc0;text-align:center;padding:8px;}
-</style>
-</head>
-<body>
-<div class="nes">
-<div class="scanlines"></div>
+</style></head><body>
+<div class="nes"><div class="scanlines"></div>
 <div class="page on" id="pg-landing">
-  <div class="color-bar"><div class="cb1"></div><div class="cb2"></div><div class="cb3"></div><div class="cb4"></div><div class="cb5"></div></div>
-  <div class="crowd-strip" id="crowd-landing"></div>
-  <div class="grass"></div>
-  <div class="landing-body">
-    <img class="logo-img" src="logo.png" alt="Interhouse Sports">
-    <div class="l-title">INTERHOUSE SPORTS 26'</div>
-    <div class="l-sub">SEP 12, 2025 &middot; MAIN OVAL &middot; 8 EVENTS &middot; 4 HOUSES</div>
-    <div class="l-question">WHO ARE <span class="l-highlight">YOU?</span></div>
-    <div class="role-grid">
-      <div class="role-card athlete" onclick="goTo('athlete')"><span class="rc-icon">&#127939;</span><div class="rc-label" style="color:#fc0;">ATHLETE</div><div class="rc-sub">Compete for your house</div></div>
-      <div class="role-card spectator" onclick="goTo('spectator')"><span class="rc-icon">&#127914;</span><div class="rc-label" style="color:#e40058;">SPECTATOR</div><div class="rc-sub">Come watch and cheer</div></div>
-      <div class="role-card vendor" onclick="goTo('vendor')"><span class="rc-icon">&#127978;</span><div class="rc-label" style="color:#38b000;">VENDOR</div><div class="rc-sub">Set up a stall on the day</div></div>
-      <div class="role-card sponsor" onclick="goTo('sponsor')"><span class="rc-icon">&#11088;</span><div class="rc-label" style="color:#5c94fc;">SPONSOR</div><div class="rc-sub">Support the games</div></div>
-    </div>
-    <div class="select-arrow blink">SELECT YOUR ROLE TO CONTINUE</div>
-  </div>
+<div class="color-bar"><div class="cb1"></div><div class="cb2"></div><div class="cb3"></div><div class="cb4"></div><div class="cb5"></div></div>
+<div class="crowd-strip" id="crowd-landing"></div><div class="grass"></div>
+<div class="landing-body">
+<img class="logo-img" src="logo.png" alt="IHS">
+<div class="l-title">INTERHOUSE SPORTS 26'</div>
+<div class="l-sub">SEP 12 2025 - MAIN OVAL - 8 EVENTS - 4 HOUSES</div>
+<div class="l-question">WHO ARE <span class="l-highlight">YOU?</span></div>
+<div class="role-grid">
+<div class="role-card athlete" onclick="goTo('athlete')"><span class="rc-icon">&#127939;</span><div class="rc-label" style="color:#fc0;">ATHLETE</div><div class="rc-sub">Compete for your house</div></div>
+<div class="role-card spectator" onclick="goTo('spectator')"><span class="rc-icon">&#127914;</span><div class="rc-label" style="color:#e40058;">SPECTATOR</div><div class="rc-sub">Come watch and cheer</div></div>
+<div class="role-card vendor" onclick="goTo('vendor')"><span class="rc-icon">&#127978;</span><div class="rc-label" style="color:#38b000;">VENDOR</div><div class="rc-sub">Set up a stall on the day</div></div>
+<div class="role-card sponsor" onclick="goTo('sponsor')"><span class="rc-icon">&#11088;</span><div class="rc-label" style="color:#5c94fc;">SPONSOR</div><div class="rc-sub">Support the games</div></div>
 </div>
+<div class="select-arrow blink">SELECT YOUR ROLE TO CONTINUE</div>
+</div></div>
 <div class="page" id="pg-athlete">
-  <div class="color-bar"><div class="cb1"></div><div class="cb1"></div><div class="cb1"></div><div class="cb1"></div><div class="cb1"></div></div>
-  <div class="sky-strip" id="sky-athlete"></div><div class="grass"></div>
-  <div class="page-content fade-in">
-    <div class="page-header"><div class="ph-back" onclick="goTo('landing')">&#9664; BACK</div><div class="ph-title" style="color:#fc0;">ATHLETE</div><div class="ph-badge" style="border-color:#fc0;color:#fc0;">OPEN</div></div>
-    <label class="nfl">FULL NAME</label><input class="nfi" id="a-name" placeholder="YOUR NAME" type="text">
-    <label class="nfl">EMAIL</label><input class="nfi" id="a-email" placeholder="YOUR EMAIL" type="email">
-    <label class="nfl">HOUSE</label>
-    <select class="nfsel" id="a-house"><option value="">SELECT HOUSE</option><option>Phoenix</option><option>Titan</option><option>Viper</option><option>Storm</option></select>
-    <label class="nfl">EVENTS</label>
-    <div class="pill-row">
-      <div class="epill" onclick="this.classList.toggle('on')">100M</div>
-      <div class="epill" onclick="this.classList.toggle('on')">LONG JUMP</div>
-      <div class="epill" onclick="this.classList.toggle('on')">SHOT PUT</div>
-      <div class="epill" onclick="this.classList.toggle('on')">HIGH JUMP</div>
-      <div class="epill" onclick="this.classList.toggle('on')">TUG OF WAR</div>
-      <div class="epill" onclick="this.classList.toggle('on')">4X100</div>
-      <div class="epill" onclick="this.classList.toggle('on')">JAVELIN</div>
-    </div>
-    <div class="fcheck"><input type="checkbox" id="a-waiver"><label for="a-waiver">I AM FIT TO COMPETE AND AGREE TO THE WAIVER</label></div>
-    <div class="loading" id="l-athlete">SUBMITTING...</div>
-    <div class="err" id="err-athlete"></div>
-    <button class="submit-btn btn-gold" id="btn-athlete" onclick="sub('athlete')">PRESS START &#9658;</button>
-    <div class="suc" id="suc-a">REGISTERED! SEE YOU ON THE FIELD.</div>
-  </div>
-  <div class="ticker-wrap"><div class="ticker-inner"><span>ATHLETE REG</span><span>///</span><span>COMPETE FOR YOUR HOUSE</span><span>///</span><span>8 EVENTS</span><span>///</span><span>CLOSES SEP 1</span><span>///</span><span>ATHLETE REG</span><span>///</span><span>COMPETE FOR YOUR HOUSE</span><span>///</span><span>8 EVENTS</span><span>///</span><span>CLOSES SEP 1</span><span>///</span></div></div>
+<div class="color-bar"><div class="cb1"></div><div class="cb1"></div><div class="cb1"></div><div class="cb1"></div><div class="cb1"></div></div>
+<div class="sky-strip" id="sky-athlete"></div><div class="grass"></div>
+<div class="page-content fade-in">
+<div class="page-header"><div class="ph-back" onclick="goTo('landing')">BACK</div><div class="ph-title" style="color:#fc0;">ATHLETE</div><div class="ph-badge" style="border-color:#fc0;color:#fc0;">OPEN</div></div>
+<label class="nfl">FULL NAME</label><input class="nfi" id="a-name" placeholder="YOUR NAME" type="text">
+<label class="nfl">EMAIL</label><input class="nfi" id="a-email" placeholder="YOUR EMAIL" type="email">
+<label class="nfl">HOUSE</label>
+<select class="nfsel" id="a-house"><option value="">SELECT HOUSE</option><option>Phoenix</option><option>Titan</option><option>Viper</option><option>Storm</option></select>
+<label class="nfl">EVENTS</label>
+<div class="pill-row"><div class="epill" onclick="this.classList.toggle('on')">100M</div><div class="epill" onclick="this.classList.toggle('on')">LONG JUMP</div><div class="epill" onclick="this.classList.toggle('on')">SHOT PUT</div><div class="epill" onclick="this.classList.toggle('on')">HIGH JUMP</div><div class="epill" onclick="this.classList.toggle('on')">TUG OF WAR</div><div class="epill" onclick="this.classList.toggle('on')">4X100</div><div class="epill" onclick="this.classList.toggle('on')">JAVELIN</div></div>
+<div class="fcheck"><input type="checkbox" id="a-waiver"><label for="a-waiver">I AM FIT TO COMPETE AND AGREE TO THE WAIVER</label></div>
+<div class="loading" id="l-athlete">SUBMITTING...</div><div class="err" id="err-athlete"></div>
+<button class="submit-btn btn-gold" id="btn-athlete" onclick="sub('athlete')">PRESS START</button>
+<div class="suc" id="suc-a">REGISTERED! SEE YOU ON THE FIELD.</div>
+</div>
+<div class="ticker-wrap"><div class="ticker-inner"><span>ATHLETE REG</span><span>///</span><span>COMPETE FOR YOUR HOUSE</span><span>///</span><span>8 EVENTS</span><span>///</span><span>CLOSES SEP 1</span><span>///</span><span>ATHLETE REG</span><span>///</span><span>COMPETE FOR YOUR HOUSE</span><span>///</span><span>8 EVENTS</span><span>///</span><span>CLOSES SEP 1</span><span>///</span></div></div>
 </div>
 <div class="page" id="pg-spectator">
-  <div class="color-bar"><div class="cb2"></div><div class="cb2"></div><div class="cb2"></div><div class="cb2"></div><div class="cb2"></div></div>
-  <div class="sky-strip" id="sky-spectator"></div><div class="grass"></div>
-  <div class="page-content fade-in">
-    <div class="page-header"><div class="ph-back" onclick="goTo('landing')">&#9664; BACK</div><div class="ph-title" style="color:#e40058;">SPECTATOR</div><div class="ph-badge" style="border-color:#e40058;color:#e40058;">FREE</div></div>
-    <label class="nfl">FULL NAME</label><input class="nfi" id="sp-name" placeholder="YOUR NAME" type="text">
-    <label class="nfl">EMAIL</label><input class="nfi" id="sp-email" placeholder="YOUR EMAIL" type="email">
-    <label class="nfl">HOUSE SUPPORTING</label>
-    <select class="nfsel" id="sp-house"><option value="">NEUTRAL</option><option>Phoenix</option><option>Titan</option><option>Viper</option><option>Storm</option></select>
-    <label class="nfl">NUMBER OF TICKETS</label>
-    <select class="nfsel" id="sp-qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
-    <div class="info-panel">
-      <div class="ip-title">GAME DAY</div>
-      <div class="ip-row"><div class="ip-label">GATES OPEN</div><div class="ip-val">8:00 AM</div></div>
-      <div class="ip-row"><div class="ip-label">FIRST EVENT</div><div class="ip-val">9:00 AM</div></div>
-      <div class="ip-row"><div class="ip-label">AWARDS</div><div class="ip-val">3:30 PM</div></div>
-    </div>
-    <div class="loading" id="l-spectator">SUBMITTING...</div>
-    <div class="err" id="err-spectator"></div>
-    <button class="submit-btn btn-red" id="btn-spectator" onclick="sub('spectator')">GET MY TICKET &#9658;</button>
-    <div class="suc" id="suc-sp">TICKET CONFIRMED! SEE YOU SEP 12.</div>
-  </div>
-  <div class="ticker-wrap"><div class="ticker-inner"><span>SPECTATOR TICKETS</span><span>///</span><span>GATES OPEN 8:00AM</span><span>///</span><span>FREE ENTRY</span><span>///</span><span>SPECTATOR TICKETS</span><span>///</span><span>GATES OPEN 8:00AM</span><span>///</span><span>FREE ENTRY</span><span>///</span></div></div>
+<div class="color-bar"><div class="cb2"></div><div class="cb2"></div><div class="cb2"></div><div class="cb2"></div><div class="cb2"></div></div>
+<div class="sky-strip" id="sky-spectator"></div><div class="grass"></div>
+<div class="page-content fade-in">
+<div class="page-header"><div class="ph-back" onclick="goTo('landing')">BACK</div><div class="ph-title" style="color:#e40058;">SPECTATOR</div><div class="ph-badge" style="border-color:#e40058;color:#e40058;">FREE</div></div>
+<label class="nfl">FULL NAME</label><input class="nfi" id="sp-name" placeholder="YOUR NAME" type="text">
+<label class="nfl">EMAIL</label><input class="nfi" id="sp-email" placeholder="YOUR EMAIL" type="email">
+<label class="nfl">HOUSE SUPPORTING</label>
+<select class="nfsel" id="sp-house"><option value="">NEUTRAL</option><option>Phoenix</option><option>Titan</option><option>Viper</option><option>Storm</option></select>
+<label class="nfl">NUMBER OF TICKETS</label>
+<select class="nfsel" id="sp-qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
+<div class="info-panel"><div class="ip-title">GAME DAY</div>
+<div class="ip-row"><div class="ip-label">GATES OPEN</div><div class="ip-val">8:00 AM</div></div>
+<div class="ip-row"><div class="ip-label">FIRST EVENT</div><div class="ip-val">9:00 AM</div></div>
+<div class="ip-row"><div class="ip-label">AWARDS</div><div class="ip-val">3:30 PM</div></div></div>
+<div class="loading" id="l-spectator">SUBMITTING...</div><div class="err" id="err-spectator"></div>
+<button class="submit-btn btn-red" id="btn-spectator" onclick="sub('spectator')">GET MY TICKET</button>
+<div class="suc" id="suc-sp">TICKET CONFIRMED! SEE YOU SEP 12.</div>
+</div>
+<div class="ticker-wrap"><div class="ticker-inner"><span>SPECTATOR TICKETS</span><span>///</span><span>GATES OPEN 8:00AM</span><span>///</span><span>FREE ENTRY</span><span>///</span><span>SPECTATOR TICKETS</span><span>///</span><span>GATES OPEN 8:00AM</span><span>///</span><span>FREE ENTRY</span><span>///</span></div></div>
 </div>
 <div class="page" id="pg-vendor">
-  <div class="color-bar"><div class="cb4"></div><div class="cb4"></div><div class="cb4"></div><div class="cb4"></div><div class="cb4"></div></div>
-  <div class="sky-strip" id="sky-vendor"></div><div class="grass"></div>
-  <div class="page-content fade-in">
-    <div class="page-header"><div class="ph-back" onclick="goTo('landing')">&#9664; BACK</div><div class="ph-title" style="color:#38b000;">VENDOR</div><div class="ph-badge" style="border-color:#38b000;color:#38b000;">6 LEFT</div></div>
-    <label class="nfl">BUSINESS NAME</label><input class="nfi" id="v-biz" placeholder="YOUR STALL NAME" type="text">
-    <label class="nfl">CONTACT NAME</label><input class="nfi" id="v-name" placeholder="YOUR NAME" type="text">
-    <label class="nfl">EMAIL</label><input class="nfi" id="v-email" placeholder="YOUR EMAIL" type="email">
-    <label class="nfl">STALL TYPE</label>
-    <select class="nfsel" id="v-type"><option value="">SELECT TYPE</option><option>Food + Drink</option><option>Merchandise</option><option>Health + Wellness</option><option>Equipment</option><option>Charity</option><option>Other</option></select>
-    <div class="fcheck"><input type="checkbox" id="vt"><label for="vt">I AGREE TO VENDOR TERMS AND STALL FEES</label></div>
-    <div class="loading" id="l-vendor">SUBMITTING...</div>
-    <div class="err" id="err-vendor"></div>
-    <button class="submit-btn btn-green" id="btn-vendor" onclick="sub('vendor')">APPLY NOW &#9658;</button>
-    <div class="suc" id="suc-v">APPLICATION RECEIVED! WE WILL BE IN TOUCH.</div>
-  </div>
-  <div class="ticker-wrap"><div class="ticker-inner"><span>VENDOR APPS</span><span>///</span><span>6 SPOTS LEFT</span><span>///</span><span>SETUP FROM 6:30AM</span><span>///</span><span>VENDOR APPS</span><span>///</span><span>6 SPOTS LEFT</span><span>///</span><span>SETUP FROM 6:30AM</span><span>///</span></div></div>
+<div class="color-bar"><div class="cb4"></div><div class="cb4"></div><div class="cb4"></div><div class="cb4"></div><div class="cb4"></div></div>
+<div class="sky-strip" id="sky-vendor"></div><div class="grass"></div>
+<div class="page-content fade-in">
+<div class="page-header"><div class="ph-back" onclick="goTo('landing')">BACK</div><div class="ph-title" style="color:#38b000;">VENDOR</div><div class="ph-badge" style="border-color:#38b000;color:#38b000;">6 LEFT</div></div>
+<label class="nfl">BUSINESS NAME</label><input class="nfi" id="v-biz" placeholder="YOUR STALL NAME" type="text">
+<label class="nfl">CONTACT NAME</label><input class="nfi" id="v-name" placeholder="YOUR NAME" type="text">
+<label class="nfl">EMAIL</label><input class="nfi" id="v-email" placeholder="YOUR EMAIL" type="email">
+<label class="nfl">STALL TYPE</label>
+<select class="nfsel" id="v-type"><option value="">SELECT TYPE</option><option>Food + Drink</option><option>Merchandise</option><option>Health + Wellness</option><option>Equipment</option><option>Charity</option><option>Other</option></select>
+<div class="fcheck"><input type="checkbox" id="vt"><label for="vt">I AGREE TO VENDOR TERMS AND STALL FEES</label></div>
+<div class="loading" id="l-vendor">SUBMITTING...</div><div class="err" id="err-vendor"></div>
+<button class="submit-btn btn-green" id="btn-vendor" onclick="sub('vendor')">APPLY NOW</button>
+<div class="suc" id="suc-v">APPLICATION RECEIVED! WE WILL BE IN TOUCH.</div>
+</div>
+<div class="ticker-wrap"><div class="ticker-inner"><span>VENDOR APPS</span><span>///</span><span>6 SPOTS LEFT</span><span>///</span><span>SETUP 6:30AM</span><span>///</span><span>VENDOR APPS</span><span>///</span><span>6 SPOTS LEFT</span><span>///</span><span>SETUP 6:30AM</span><span>///</span></div></div>
 </div>
 <div class="page" id="pg-sponsor">
-  <div class="color-bar"><div class="cb3"></div><div class="cb3"></div><div class="cb3"></div><div class="cb3"></div><div class="cb3"></div></div>
-  <div class="sky-strip" id="sky-sponsor"></div><div class="grass"></div>
-  <div class="page-content fade-in">
-    <div class="page-header"><div class="ph-back" onclick="goTo('landing')">&#9664; BACK</div><div class="ph-title" style="color:#5c94fc;">SPONSOR</div><div class="ph-badge" style="border-color:#5c94fc;color:#5c94fc;">LIMITED</div></div>
-    <div class="info-panel" style="border-color:#5c94fc;margin-bottom:12px;">
-      <div class="ip-title" style="color:#5c94fc;">TIERS</div>
-      <div class="perk-list">
-        <div class="perk-item" style="border-color:#fc0;"><span style="color:#fc0;">GOLD</span> - Logo on all materials + PA mention + premium stall</div>
-        <div class="perk-item" style="border-color:#aaa;"><span style="color:#aaa;">SILVER</span> - Logo on banners + PA mention</div>
-        <div class="perk-item" style="border-color:#c84b0c;"><span style="color:#c84b0c;">BRONZE</span> - Logo on print + social shoutout</div>
-        <div class="perk-item" style="border-color:#333;"><span style="color:#888;">COMMUNITY</span> - Social + programme listing</div>
-      </div>
-    </div>
-    <label class="nfl">COMPANY NAME</label><input class="nfi" id="sp2-biz" placeholder="ORGANISATION" type="text">
-    <label class="nfl">CONTACT NAME</label><input class="nfi" id="sp2-name" placeholder="YOUR NAME" type="text">
-    <label class="nfl">EMAIL</label><input class="nfi" id="sp2-email" placeholder="YOUR EMAIL" type="email">
-    <label class="nfl">TIER INTEREST</label>
-    <select class="nfsel" id="sp2-tier"><option value="">SELECT TIER</option><option>Gold</option><option>Silver</option><option>Bronze</option><option>Community</option></select>
-    <div class="loading" id="l-sponsor">SUBMITTING...</div>
-    <div class="err" id="err-sponsor"></div>
-    <button class="submit-btn btn-blue" id="btn-sponsor" onclick="sub('sponsor')">REGISTER INTEREST &#9658;</button>
-    <div class="suc" id="suc-sp2">ENQUIRY RECEIVED! WE WILL REACH OUT SHORTLY.</div>
-  </div>
-  <div class="ticker-wrap"><div class="ticker-inner"><span>SPONSORSHIP OPEN</span><span>///</span><span>GOLD SILVER BRONZE COMMUNITY</span><span>///</span><span>REGISTER TODAY</span><span>///</span><span>SPONSORSHIP OPEN</span><span>///</span><span>GOLD SILVER BRONZE COMMUNITY</span><span>///</span><span>REGISTER TODAY</span><span>///</span></div></div>
+<div class="color-bar"><div class="cb3"></div><div class="cb3"></div><div class="cb3"></div><div class="cb3"></div><div class="cb3"></div></div>
+<div class="sky-strip" id="sky-sponsor"></div><div class="grass"></div>
+<div class="page-content fade-in">
+<div class="page-header"><div class="ph-back" onclick="goTo('landing')">BACK</div><div class="ph-title" style="color:#5c94fc;">SPONSOR</div><div class="ph-badge" style="border-color:#5c94fc;color:#5c94fc;">LIMITED</div></div>
+<div class="info-panel" style="border-color:#5c94fc;margin-bottom:12px;">
+<div class="ip-title" style="color:#5c94fc;">TIERS</div>
+<div class="perk-list">
+<div class="perk-item" style="border-color:#fc0;"><span style="color:#fc0;">GOLD</span> - Logo all materials + PA + stall</div>
+<div class="perk-item" style="border-color:#aaa;"><span style="color:#aaa;">SILVER</span> - Logo banners + PA</div>
+<div class="perk-item" style="border-color:#c84b0c;"><span style="color:#c84b0c;">BRONZE</span> - Logo print + social</div>
+<div class="perk-item" style="border-color:#333;"><span style="color:#888;">COMMUNITY</span> - Social + programme</div>
+</div></div>
+<label class="nfl">COMPANY NAME</label><input class="nfi" id="sp2-biz" placeholder="ORGANISATION" type="text">
+<label class="nfl">CONTACT NAME</label><input class="nfi" id="sp2-name" placeholder="YOUR NAME" type="text">
+<label class="nfl">EMAIL</label><input class="nfi" id="sp2-email" placeholder="YOUR EMAIL" type="email">
+<label class="nfl">TIER INTEREST</label>
+<select class="nfsel" id="sp2-tier"><option value="">SELECT TIER</option><option>Gold</option><option>Silver</option><option>Bronze</option><option>Community</option></select>
+<div class="loading" id="l-sponsor">SUBMITTING...</div><div class="err" id="err-sponsor"></div>
+<button class="submit-btn btn-blue" id="btn-sponsor" onclick="sub('sponsor')">REGISTER INTEREST</button>
+<div class="suc" id="suc-sp2">ENQUIRY RECEIVED! WE WILL REACH OUT.</div>
+</div>
+<div class="ticker-wrap"><div class="ticker-inner"><span>SPONSORSHIP</span><span>///</span><span>GOLD SILVER BRONZE COMMUNITY</span><span>///</span><span>REGISTER TODAY</span><span>///</span><span>SPONSORSHIP</span><span>///</span><span>GOLD SILVER BRONZE COMMUNITY</span><span>///</span><span>REGISTER TODAY</span><span>///</span></div></div>
 </div>
 </div>
 <script>
-const SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
-const CROWD_COLS=['#fc0','#5c94fc','#38b000','#e40058','#fff','#c84b0c','#aaa'];
-['crowd-landing','sky-athlete','sky-spectator','sky-vendor','sky-sponsor'].forEach(id=>{
-  const el=document.getElementById(id);
-  if(!el)return;
-  for(let i=0;i<110;i++){
-    const p=document.createElement('div');
-    p.style.cssText=`width:6px;height:${6+Math.floor(Math.random()*14)}px;background:${CROWD_COLS[Math.floor(Math.random()*CROWD_COLS.length)]};flex-shrink:0;align-self:flex-end;`;
-    el.appendChild(p);
-  }
-});
-function goTo(page){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
-  document.getElementById(page==='landing'?'pg-landing':'pg-'+page).classList.add('on');
-  window.scrollTo(0,0);
-}
+const SHEET_URL='YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+const CC=['#fc0','#5c94fc','#38b000','#e40058','#fff','#c84b0c','#aaa'];
+['crowd-landing','sky-athlete','sky-spectator','sky-vendor','sky-sponsor'].forEach(id=>{const el=document.getElementById(id);if(!el)return;for(let i=0;i<110;i++){const p=document.createElement('div');p.style.cssText='width:6px;height:'+(6+Math.floor(Math.random()*14))+'px;background:'+CC[Math.floor(Math.random()*CC.length)]+';flex-shrink:0;align-self:flex-end;';el.appendChild(p);}});
+function goTo(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(p==='landing'?'pg-landing':'pg-'+p).classList.add('on');window.scrollTo(0,0);}
 async function sub(type){
-  const configs={
-    athlete:{fields:{name:'a-name',email:'a-email',house:'a-house'},suc:'suc-a',btn:'btn-athlete',load:'l-athlete',err:'err-athlete',
-      extras(){const events=[...document.querySelectorAll('#pg-athlete .epill.on')].map(e=>e.textContent).join(', ');if(!document.getElementById('a-waiver').checked){alert('PLEASE AGREE TO THE WAIVER');return null;}return{events:events||'NONE'};}},
-    spectator:{fields:{name:'sp-name',email:'sp-email',house:'sp-house',tickets:'sp-qty'},suc:'suc-sp',btn:'btn-spectator',load:'l-spectator',err:'err-spectator',extras(){return{};}},
-    vendor:{fields:{business:'v-biz',name:'v-name',email:'v-email',stallType:'v-type'},suc:'suc-v',btn:'btn-vendor',load:'l-vendor',err:'err-vendor',
-      extras(){if(!document.getElementById('vt').checked){alert('PLEASE AGREE TO VENDOR TERMS');return null;}return{};}},
-    sponsor:{fields:{company:'sp2-biz',name:'sp2-name',email:'sp2-email',tier:'sp2-tier'},suc:'suc-sp2',btn:'btn-sponsor',load:'l-sponsor',err:'err-sponsor',extras(){return{};}}
-  };
-  const cfg=configs[type];
-  const data={type,timestamp:new Date().toISOString()};
-  for(const[key,id] of Object.entries(cfg.fields)){
-    const val=document.getElementById(id)?.value?.trim()||'';
-    if(!val&&key!=='house'&&key!=='tickets'&&key!=='house'){alert('PLEASE FILL IN ALL REQUIRED FIELDS');return;}
-    data[key]=val;
-  }
-  const extras=cfg.extras();
-  if(extras===null)return;
-  Object.assign(data,extras);
-  const btn=document.getElementById(cfg.btn);
-  const load=document.getElementById(cfg.load);
-  const errEl=document.getElementById(cfg.err);
-  btn.disabled=true;load.style.display='block';errEl.style.display='none';
-  try{
-    await fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-    load.style.display='none';
-    document.getElementById(cfg.suc).style.display='block';
-    btn.style.display='none';
-  }catch(e){
-    load.style.display='none';
-    errEl.textContent='CONNECTION ERROR. TRY AGAIN.';
-    errEl.style.display='block';
-    btn.disabled=false;
-  }
+const C={
+athlete:{f:{name:'a-name',email:'a-email',house:'a-house'},s:'suc-a',b:'btn-athlete',l:'l-athlete',e:'err-athlete',x(){const ev=[...document.querySelectorAll('#pg-athlete .epill.on')].map(e=>e.textContent).join(', ');if(!document.getElementById('a-waiver').checked){alert('PLEASE AGREE TO THE WAIVER');return null;}return{events:ev||'NONE'};}},
+spectator:{f:{name:'sp-name',email:'sp-email',house:'sp-house',tickets:'sp-qty'},s:'suc-sp',b:'btn-spectator',l:'l-spectator',e:'err-spectator',x(){return{};}},
+vendor:{f:{business:'v-biz',name:'v-name',email:'v-email',stallType:'v-type'},s:'suc-v',b:'btn-vendor',l:'l-vendor',e:'err-vendor',x(){if(!document.getElementById('vt').checked){alert('PLEASE AGREE TO VENDOR TERMS');return null;}return{};}},
+sponsor:{f:{company:'sp2-biz',name:'sp2-name',email:'sp2-email',tier:'sp2-tier'},s:'suc-sp2',b:'btn-sponsor',l:'l-sponsor',e:'err-sponsor',x(){return{};}}
+};
+const cfg=C[type];const data={type,timestamp:new Date().toISOString()};
+for(const[k,id] of Object.entries(cfg.f)){const v=document.getElementById(id)?.value?.trim()||'';if(!v&&k!=='house'&&k!=='tickets'){alert('PLEASE FILL IN ALL REQUIRED FIELDS');return;}data[k]=v;}
+const ex=cfg.x();if(ex===null)return;Object.assign(data,ex);
+const btn=document.getElementById(cfg.b);const ld=document.getElementById(cfg.l);const er=document.getElementById(cfg.e);
+btn.disabled=true;ld.style.display='block';er.style.display='none';
+try{await fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});ld.style.display='none';document.getElementById(cfg.s).style.display='block';btn.style.display='none';}
+catch(err){ld.style.display='none';er.textContent='CONNECTION ERROR. TRY AGAIN.';er.style.display='block';btn.disabled=false;}
 }
-</script>
-</body>
-</html>
+</script></body></html>

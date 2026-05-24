@@ -3988,11 +3988,11 @@
 
 </div>
 <script>
-const SHEET_URL='https://script.google.com/macros/s/AKfycbyLxmB2VNfiRDRpd1OHjqUy1eI47RG8lRswDJT6b9MMJcp0DXumXHdC6BQzyIvmdhnHyw/exec';
+const SHEET_URL='https://script.google.com/macros/s/AKfycbzlUMM2sPx0lWXg3w5tv_PuT7CdD5oDvzJZa3gAUmDVBwEcf1CQMFZHR8oa42cEu8MpWQ/exec';
 function goTo(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(p==='landing'?'pg-landing':'pg-'+p).classList.add('on');window.scrollTo(0,0);}
 async function sub(type){
   const C={
-    athlete:{f:{name:'a-name',email:'a-email'},s:'suc-a',b:'btn-athlete',l:'l-athlete',e:'err-athlete',x(){return{grade:document.getElementById('a-grade').value.trim()};}},
+    athlete:{f:{name:'a-name',email:'a-email'},s:'suc-a',b:'btn-athlete',l:'l-athlete',e:'err-athlete',x(){return{}},
     spectator:{f:{name:'sp-name',email:'sp-email'},s:'suc-sp',b:'btn-spectator',l:'l-spectator',e:'err-spectator',x(){return{};}},
     vendor:{f:{business:'v-biz',name:'v-name',phone:'v-phone'},s:'suc-v',b:'btn-vendor',l:'l-vendor',e:'err-vendor',x(){return{};}},
     sponsor:{f:{company:'sp2-biz',name:'sp2-name',contact:'sp2-contact'},s:'suc-sp2',b:'btn-sponsor',l:'l-sponsor',e:'err-sponsor',x(){return{}; }}

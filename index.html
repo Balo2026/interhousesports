@@ -1646,6 +1646,7 @@
     <div class="page-header"><div class="ph-back" onclick="goTo('landing')">BACK</div><div class="ph-title" style="color:#fc0;">ATHLETE</div><div class="ph-badge" style="border-color:#fc0;color:#fc0;">OPEN</div></div>
     <label class="nfl">FULL NAME</label><input class="nfi" id="a-name" placeholder="YOUR NAME" type="text">
     <label class="nfl">EMAIL</label><input class="nfi" id="a-email" placeholder="YOUR EMAIL" type="email">
+    <label class="nfl">PHONE NUMBER</label><input class="nfi" id="a-phone" placeholder="204-XXX-XXXX" type="tel">
     <div class="loading" id="l-athlete">SUBMITTING...</div><div class="err" id="err-athlete"></div>
     <button class="submit-btn btn-gold" id="btn-athlete" onclick="sub('athlete')">PRESS START</button>
     <div class="suc" id="suc-a">REGISTERED! YOU WILL BE CONTACTED WITH FURTHER INFORMATION.</div>
@@ -2786,6 +2787,7 @@
     <label class="nfl">BUSINESS NAME</label><input class="nfi" id="v-biz" placeholder="YOUR STALL NAME" type="text">
     <label class="nfl">CONTACT NAME</label><input class="nfi" id="v-name" placeholder="YOUR NAME" type="text">
     <label class="nfl">PHONE NUMBER</label><input class="nfi" id="v-phone" placeholder="204-XXX-XXXX" type="tel">
+    <label class="nfl">EMAIL</label><input class="nfi" id="v-email" placeholder="YOUR EMAIL" type="email">
     <div class="loading" id="l-vendor">SUBMITTING...</div><div class="err" id="err-vendor"></div>
     <button class="submit-btn btn-green" id="btn-vendor" onclick="sub('vendor')">APPLY NOW</button>
     <div class="suc" id="suc-v">APPLICATION RECEIVED! WE WILL BE IN TOUCH.</div>
@@ -3992,9 +3994,9 @@ const SHEET_URL='https://script.google.com/macros/s/AKfycbzlUMM2sPx0lWXg3w5tv_Pu
 function goTo(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(p==='landing'?'pg-landing':'pg-'+p).classList.add('on');window.scrollTo(0,0);}
 async function sub(type){
   const C={
-    athlete:{f:{name:'a-name',email:'a-email'},s:'suc-a',b:'btn-athlete',l:'l-athlete',e:'err-athlete',x(){return{};}},
+    athlete:{f:{name:'a-name',email:'a-email',phone:'a-phone'},s:'suc-a',b:'btn-athlete',l:'l-athlete',e:'err-athlete',x(){return{};}},
     spectator:{f:{name:'sp-name',email:'sp-email'},s:'suc-sp',b:'btn-spectator',l:'l-spectator',e:'err-spectator',x(){return{};}},
-    vendor:{f:{business:'v-biz',name:'v-name',phone:'v-phone'},s:'suc-v',b:'btn-vendor',l:'l-vendor',e:'err-vendor',x(){return{};}},
+    vendor:{f:{business:'v-biz',name:'v-name',phone:'v-phone',email:'v-email'},s:'suc-v',b:'btn-vendor',l:'l-vendor',e:'err-vendor',x(){return{};}},
     sponsor:{f:{company:'sp2-biz',name:'sp2-name',contact:'sp2-contact'},s:'suc-sp2',b:'btn-sponsor',l:'l-sponsor',e:'err-sponsor',x(){return{}; }}
   };
   const cfg=C[type];const data={type,timestamp:new Date().toISOString()};

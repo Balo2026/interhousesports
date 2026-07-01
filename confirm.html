@@ -33,14 +33,6 @@
   0%{transform:translateX(1650px)}
   100%{transform:translateX(-100px)}
 }
-@keyframes pA {
-  0%,49%{opacity:1}
-  50%,100%{opacity:0}
-}
-@keyframes pB {
-  0%,49%{opacity:0}
-  50%,100%{opacity:1}
-}
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   background:#000080;
@@ -55,24 +47,20 @@ body{
   background:repeating-linear-gradient(0deg,rgba(0,0,0,.08) 0px,rgba(0,0,0,.08) 1px,transparent 1px,transparent 3px);
   pointer-events:none;z-index:99;
 }
-/* Track bg */
 .track-bg{
   position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;
 }
 .track-bg svg{width:100%;height:100%;position:absolute;top:0;left:0}
-/* Sky strip */
 .sky-strip{
   background:#5c94fc;height:32px;display:flex;gap:1px;align-items:flex-end;padding:0 6px;overflow:hidden;position:relative;z-index:2;
 }
 .sky-strip svg{width:100%;height:32px;display:block}
 .grass{background:#38b000;height:8px;border-top:3px solid #fff;position:relative;z-index:2}
-/* Ticker */
 .ticker-wrap{
   background:#000;border-top:2px solid #333;overflow:hidden;white-space:nowrap;padding:4px 0;position:relative;z-index:2;
 }
 .ticker-inner{display:inline-flex;gap:32px;animation:ntick 22s linear infinite}
 .ticker-inner span{font-size:5px;color:#ffcc00;letter-spacing:.1em}
-/* Main content */
 .page-wrap{
   position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding:32px 20px 64px;
 }
@@ -101,11 +89,9 @@ body{
 .card-badge{
   font-size:5px;padding:4px 8px;border:1px solid #ffcc00;color:#ffcc00;
 }
-/* Form fields */
 .nfl{
   display:block;font-size:6px;color:#ffcc00;margin-bottom:4px;margin-top:14px;
 }
-.nfl:first-of-type{margin-top:0}
 .nfi{
   width:100%;background:#000;border:1px solid #444;color:#fff;padding:8px 10px;
   font-size:6px;font-family:"Press Start 2P",monospace;outline:none;margin-bottom:2px;
@@ -114,7 +100,6 @@ body{
 .nfi::placeholder{color:#555}
 .row2{display:flex;gap:10px}
 .row2 .nfi-wrap{flex:1}
-/* Checkbox */
 .check-wrap{
   display:flex;align-items:flex-start;gap:10px;margin-top:18px;
   border:1px solid #333;padding:12px;background:#0a0a0a;
@@ -126,7 +111,6 @@ body{
   font-size:5.5px;color:#ccc;line-height:2;cursor:pointer;
 }
 .check-label span{color:#ffcc00}
-/* Buttons */
 .submit-btn{
   width:100%;padding:10px;
   font-family:Paris2024,sans-serif;font-size:16px;
@@ -152,23 +136,18 @@ body{
   border:none;border-top:1px solid #222;margin:14px 0;
 }
 .hint{font-size:5px;color:#555;margin-top:3px;line-height:1.8}
-/* Footer */
 .footer-link{
   display:flex;align-items:center;justify-content:center;gap:8px;
   margin-top:28px;font-size:5px;color:#555;
 }
 .footer-link a{color:#ffcc00;text-decoration:none}
 .footer-link a:hover{text-decoration:underline}
-/* Moving sprites in sky */
 .mv1{animation:mv 11s linear 0s infinite}
-.mv2{animation:mv 14s linear -4s infinite}
 .mv3{animation:mv 10s linear -7s infinite}
-.mv4{animation:mv 13s linear -2s infinite}
 </style>
 </head>
 <body>
 <div class="scanlines"></div>
-<!-- Track background -->
 <div class="track-bg">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-56 0 1160 1000" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" shape-rendering="geometricPrecision">
   <defs>
@@ -191,7 +170,6 @@ body{
 </svg>
 </div>
 
-<!-- Sky strip with pixel buildings -->
 <div class="sky-strip">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 32" preserveAspectRatio="none">
   <rect width="1050" height="32" fill="#5c94fc"/>
@@ -206,7 +184,6 @@ body{
   <rect x="800" y="14" width="8" height="18" fill="#334"/>
   <rect x="810" y="8"  width="11" height="24" fill="#445"/>
   <rect x="950" y="16" width="7" height="16" fill="#223"/>
-  <!-- moving sprites -->
   <g class="mv1"><rect x="0" y="20" width="18" height="10" fill="#e40058" rx="1"/><rect x="2" y="18" width="14" height="4" fill="#ff2277" rx="1"/><rect x="16" y="22" width="4" height="6" fill="#333"/><rect x="1" y="22" width="4" height="6" fill="#333"/></g>
   <g class="mv3"><rect x="0" y="21" width="14" height="8" fill="#ffcc00" rx="1"/><rect x="12" y="23" width="4" height="4" fill="#333"/><rect x="1" y="23" width="4" height="4" fill="#333"/></g>
 </svg>
@@ -214,11 +191,10 @@ body{
 <div class="grass"></div>
 <div class="ticker-wrap">
   <div class="ticker-inner">
-    <span>★ INTERHOUSE SPORTS 26' ★</span><span>AUG 8, 2026 — UNIVERSITY STADIUM</span><span>ATHLETE CONFIRMATION PORTAL</span><span>CONFIRM YOUR SPOT NOW</span><span>$40 INCLUDES JERSEY + PARTICIPATION FEE</span><span>★ INTERHOUSE SPORTS 26' ★</span><span>AUG 8, 2026 — UNIVERSITY STADIUM</span><span>ATHLETE CONFIRMATION PORTAL</span><span>CONFIRM YOUR SPOT NOW</span><span>$40 INCLUDES JERSEY + PARTICIPATION FEE</span>
+    <span>INTERHOUSE SPORTS 26'</span><span>AUG 8, 2026 — UNIVERSITY STADIUM</span><span>ATHLETE CONFIRMATION PORTAL</span><span>CONFIRM YOUR SPOT NOW</span><span>$40 INCLUDES JERSEY + PARTICIPATION FEE</span><span>INTERHOUSE SPORTS 26'</span><span>AUG 8, 2026 — UNIVERSITY STADIUM</span><span>ATHLETE CONFIRMATION PORTAL</span><span>CONFIRM YOUR SPOT NOW</span><span>$40 INCLUDES JERSEY + PARTICIPATION FEE</span>
   </div>
 </div>
 
-<!-- Main page content -->
 <div class="page-wrap">
   <img src="logo.png" alt="IHS" class="logo-img">
   <div class="pg-title">ATHLETE CONFIRMATION</div>
@@ -228,7 +204,7 @@ body{
   <div class="card">
     <div class="card-header">
       <div class="card-title">CONFIRM YOUR SPOT</div>
-      <div class="card-badge">🏃 ATHLETE</div>
+      <div class="card-badge">ATHLETE</div>
     </div>
 
     <div class="row2">
@@ -260,16 +236,16 @@ body{
 
     <div class="loading" id="c-loading">SUBMITTING...</div>
     <div class="err" id="c-err">PLEASE FILL IN ALL REQUIRED FIELDS AND CHECK THE BOX.</div>
-    <button class="submit-btn" id="c-btn" onclick="submitConfirm()">LOCK IT IN ▶</button>
+    <button class="submit-btn" id="c-btn" onclick="submitConfirm()">LOCK IT IN</button>
     <div class="suc" id="c-suc">
-      ✔ YOU'RE CONFIRMED!<br><br>
+      YOU ARE CONFIRMED!<br><br>
       SEE YOU ON AUG 8 AT UNIVERSITY STADIUM.<br><br>
       FURTHER DETAILS WILL BE SENT TO YOU SOON.
     </div>
   </div>
 
   <div class="footer-link">
-    <a href="https://interhousesports.com">← BACK TO MAIN SITE</a>
+    <a href="https://interhousesports.com">BACK TO MAIN SITE</a>
     &nbsp;·&nbsp;
     <a href="https://www.instagram.com/interhousesports/" target="_blank">@INTERHOUSESPORTS</a>
   </div>
@@ -296,27 +272,20 @@ async function submitConfirm() {
   btn.disabled = true;
   loading.style.display = 'block';
 
+  const params = new URLSearchParams({
+    type: 'confirm',
+    firstName: fn,
+    lastName: ln,
+    phone: ph,
+    instagram: ig || '',
+    fee: '$40 acknowledged'
+  });
+
   try {
-    const res = await fetch('https://formspree.io/f/xjkwpbgp', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify({
-        'First Name': fn,
-        'Last Name': ln,
-        'Phone': ph,
-        'Instagram': ig || 'N/A',
-        '_subject': 'Athlete Confirmation — ' + fn + ' ' + ln
-      })
-    });
+    await fetch('https://script.google.com/macros/s/AKfycbzlUMM2sPx0lWXg3w5tv_PuT7CdD5oDvzJZa3gAUmDVBwEcf1CQMFZHR8oa42cEu8MpWQ/exec?' + params.toString(), { method: 'GET', mode: 'no-cors' });
     loading.style.display = 'none';
-    if (res.ok) {
-      btn.style.display = 'none';
-      suc.style.display = 'block';
-    } else {
-      btn.disabled = false;
-      err.textContent = 'SOMETHING WENT WRONG. PLEASE TRY AGAIN.';
-      err.style.display = 'block';
-    }
+    btn.style.display = 'none';
+    suc.style.display = 'block';
   } catch(e) {
     loading.style.display = 'none';
     btn.disabled = false;

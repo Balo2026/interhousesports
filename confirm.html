@@ -98,6 +98,8 @@ body{
 }
 .nfi:focus{border-color:#ffcc00}
 .nfi::placeholder{color:#555}
+.nfsel{background:#000;border:1px solid #444;color:#fff;width:100%;padding:8px 10px;font-size:6px;font-family:"Press Start 2P",monospace;outline:none;cursor:pointer;margin-bottom:2px;appearance:none;-webkit-appearance:none;}
+.nfsel option{background:#000;}
 .row2{display:flex;gap:10px}
 .row2 .nfi-wrap{flex:1}
 .check-wrap{
@@ -225,6 +227,14 @@ body{
     <input class="nfi" id="c-ig" type="text" placeholder="@YOURHANDLE">
     <div class="hint">IF APPLICABLE — WE MAY TAG YOU IN POSTS!</div>
 
+    <label class="nfl" for="c-gender">GENDER</label>
+    <select class="nfi nfsel" id="c-gender">
+      <option value="" disabled selected>SELECT</option>
+      <option value="Male">MALE</option>
+      <option value="Female">FEMALE</option>
+      <option value="Other">OTHER / PREFER NOT TO SAY</option>
+    </select>
+
     <hr class="divider">
 
     <div class="check-wrap">
@@ -278,6 +288,7 @@ async function submitConfirm() {
     lastName: ln,
     phone: ph,
     instagram: ig || '',
+    gender: document.getElementById('c-gender').value || '',
     fee: '$40 acknowledged'
   });
 

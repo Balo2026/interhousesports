@@ -223,9 +223,9 @@ body{
     <label class="nfl" for="c-phone">PHONE NUMBER</label>
     <input class="nfi" id="c-phone" type="tel" placeholder="204-XXX-XXXX" autocomplete="tel">
 
-    <label class="nfl" for="c-ig">INSTAGRAM <span style="color:#555;font-size:5px">(OPTIONAL)</span></label>
-    <input class="nfi" id="c-ig" type="text" placeholder="@YOURHANDLE">
-    <div class="hint">IF APPLICABLE — WE MAY TAG YOU IN POSTS!</div>
+    <label class="nfl" for="c-ig">INSTAGRAM</label>
+    <input class="nfi" id="c-ig" type="text" placeholder="@YOURHANDLE" required>
+    <div class="hint">WE MAY TAG YOU IN POSTS!</div>
 
     <label class="nfl" for="c-gender">GENDER</label>
     <select class="nfi nfsel" id="c-gender">
@@ -273,7 +273,7 @@ async function submitConfirm() {
   const suc = document.getElementById('c-suc');
 
   err.style.display = 'none';
-  if (!fn || !ln || !ph || !agreed) {
+  if (!fn || !ln || !ph || !ig || !agreed) {
     err.style.display = 'block';
     return;
   }
